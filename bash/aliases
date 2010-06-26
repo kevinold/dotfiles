@@ -1,0 +1,38 @@
+# Handle the fact that this file will be used with multiple OSs
+platform=`uname`
+if [[ $platform == 'Linux' ]]; then
+  alias a='ls -lrth --color'
+elif [[ $platform == 'Darwin' ]]; then
+  alias a='ls -lrthG'
+fi
+
+alias aliases='vim ~/.dotfiles/bash/aliases'
+alias b='ssh -t ben@benorenstein.com screen -rd irc'
+alias ben='ssh ben@benorenstein.com'
+alias d='cd ~/.dotfiles'
+alias g='git status'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias get='sudo apt-get install'
+alias gg='git lg'
+alias i='screen -rd irc'
+alias irb='irb --readline -r irb/completion'
+alias lm='!! | more'
+alias m='cd ~/projects/montague'
+alias n='cd ~/projects/nucleus'
+alias r='ssh beno@rd2.dfci.harvard.edu'
+alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
+alias rep="cd ~/projects/dfhcc_reports"
+alias rdm="rake db:migrate"
+alias rdtp="rake db:test:prepare"
+alias rc='rails console'
+alias rs='rails server -p 3001'
+alias s='screen -dr rails'
+alias sc='script/console'
+alias so='source ~/.dotfiles/bash/aliases'
+alias ss='ruby script/server -p 3001 --debugger'
+alias t='cd ~/projects/dfhcc_trials'

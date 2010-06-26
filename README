@@ -1,0 +1,13 @@
+Kevin Old's Dot Files
+
+(gleefully stolen/forked from Ben Orenstein)
+who
+(gleefully stolen/forked from Ryan Bates)
+
+These are config files to set up a system the way I like it.
+
+Installation
+
+  git clone git://github.com/kevinold/dotfiles ~/.dotfiles
+  cd ~/.dotfiles
+  rake install

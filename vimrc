@@ -1,9 +1,34 @@
 " Look for specific filetype specific definitions in .vim/after/ftplugin and
 " ./vim/ftplugin
-:filetype plugin on
+
+" from http://weblog.jamisbuck.org/2008/11/17/vim-follow-up
+let mapleader = ","
+map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+
+" from http://items.sjbach.com/319/configuring-vim-right
+" http://github.com/sjbach/env/blob/master/dotfiles/vimrc
+set hidden
+nnoremap ' `
+nnoremap ` '
+set history=1000
+" Make file/command completion useful
+set wildmenu
+set wildmode=list:longest
+set title
+" Start scrolling when cursor is 3 lines from bottom of viewport
+set scrolloff=3
+filetype on
+filetype plugin on
+filetype indent on
+" Display extra whitespace toggled by ,s
+set listchars=tab:>-,trail:·,eol:$
+nmap <silent> <leader>s :set nolist!<CR>
+" Another recipe to display extra whitespace from http://github.com/jferris/config_files/blob/master/vimrc
+" set list listchars=tab:»·,trail:·
 
 syntax on
 set autoindent                    "Preserve current indent on new lines
+set ignorecase
 set smartcase
 set expandtab                     "Convert all tabs typed to spaces
 set tabstop=2                     "Indentation levels every four columns
@@ -339,9 +364,6 @@ inoremap [<CR>  [<CR>]<Esc>O<TAB>
 inoremap [[     [
 inoremap []     []
 
-" Display extra whitespace
-" from http://github.com/jferris/config_files/blob/master/vimrc
-set list listchars=tab:»·,trail:·
 
 " Use Ack instead of Grep when available
 if executable("ack")

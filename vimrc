@@ -26,7 +26,11 @@ nmap <silent> <leader>s :set nolist!<CR>
 " Another recipe to display extra whitespace from http://github.com/jferris/config_files/blob/master/vimrc
 " set list listchars=tab:»·,trail:·
 
-set gfn=DejaVu\ Sans\ Mono:h21
+if has("gui_running")
+  set gfn=DejaVu\ Sans\ Mono:h21
+  set co=107
+  set lines=30
+endif
 
 syntax on
 set autoindent                    "Preserve current indent on new lines

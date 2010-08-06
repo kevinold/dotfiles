@@ -381,3 +381,25 @@ endif
 
 " For Haml
 au! BufRead,BufNewFile *.haml setfiletype haml
+
+" vim-rails
+" from http://github.com/kossnocorp/dotvim/blob/master/config/shortcuts.vim
+map <Leader>rc :RScontroller<Space>
+map <Leader>rm :RSmodel<Space>
+map <Leader>rv :RSview<Space>
+map <Leader>rh :RShelper<Space>
+
+map <Leader>rj :RSjavascript<Space>
+
+map <Leader>rl :RSlayout<Space>
+
+map <Leader>rs :RSspec<Space>
+
+map <Leader>re :RSenvironment<Space>
+
+map <Leader>ri :RSinitializer<Space>
+
+map <Leader>ra :A<CR>
+map <Leader>rr :R<CR>
+
+map <Leader>a :Ack<Space>

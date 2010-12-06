@@ -36,6 +36,7 @@ if has("gui_running")
 endif
 
 syntax on
+set autoread
 set autoindent                    "Preserve current indent on new lines
 set ignorecase
 set smartcase
@@ -403,3 +404,4 @@ map <Leader>ra :A<CR>
 map <Leader>rr :R<CR>
 
 map <Leader>a :Ack<Space>
+

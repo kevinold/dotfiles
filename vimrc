@@ -68,6 +68,7 @@ set matchpairs+=<:>               "Allow % to bounce between angles too
 
 " Fx keymappings
 map <F1> <Esc>
+imap <F1> <Esc>
 map <F3> :set number!<CR>
 map <F4> :set wrap!<CR>
 map <F5> :set list!<CR>

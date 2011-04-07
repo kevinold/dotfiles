@@ -5,3 +5,15 @@ snippet c)
 	`&enc[:2] == "utf" ? "©" : "(c)"` Copyright `strftime("%Y")` ${1:`g:snips_author`}. All Rights Reserved.${2}
 snippet date
 	`strftime("%Y-%m-%d")`
+
+# Snippets for Firebug, but want these available in all file types
+snippet cl
+	console.log(${1});
+snippet cll
+	console.log("${1:label}: " + ${2:var});
+snippet ci
+	console.info(${1});
+snippet cw
+	console.warn(${1});
+snippet ce
+	console.error(${1});

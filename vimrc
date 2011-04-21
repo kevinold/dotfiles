@@ -410,3 +410,5 @@ map <Leader>rr :R<CR>
 
 map <Leader>a :Ack<Space>
 
+" Make '<Leader>U' convert the current word to upper case.
+nnoremap <Leader>U gUiw

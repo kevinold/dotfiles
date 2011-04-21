@@ -412,3 +412,7 @@ map <Leader>a :Ack<Space>
 
 " Make '<Leader>U' convert the current word to upper case.
 nnoremap <Leader>U gUiw
+
+" Do the same as above to convert the current word to upper case while still
+" in insert mode
+inoremap <C-u> <esc> gUiwea

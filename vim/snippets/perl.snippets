@@ -89,3 +89,9 @@ snippet cl
 snippet slurp
 	my $${1:var};
 	{ local $/ = undef; local *FILE; open FILE, "<${2:file}"; $$1 = <FILE>; close FILE }${3}
+
+snippet warn
+	warn "${1:what}: " . ${2:var};
+
+snippet dp
+	warn libMisc::debug_print(${1});

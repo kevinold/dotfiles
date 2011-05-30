@@ -30,13 +30,17 @@ nmap <silent> <leader>s :set nolist!<CR>
 " set list listchars=tab:»·,trail:·
 
 if has("gui_running")
-  " DejaVu is needed for OA MBP
-  set gfn=DejaVu\ Sans\ Mono:h21
-  " Monaco is needed for Kevin's MBP for MacVim
-  "set gfn=Monaco:h21
+  " DejaVu is needed for Kevin's MBP for MacVim
+  "set gfn=DejaVu\ Sans\ Mono:h21
+  " Monaco is for OA MBP
+  set gfn=Monaco:h21
+  "set guifont=Monaco:h21
   set co=107
+  set columns=107
   set lines=30
 endif
+
+set vb
 
 syntax on
 set autoread
@@ -67,6 +71,8 @@ set wmh=0 " allows splits to reduce to 1 line instead of 2
 set matchpairs+=<:>               "Allow % to bounce between angles too
 
 " Fx keymappings
+map <F1> <Esc>
+imap <F1> <Esc>
 map <F3> :set number!<CR>
 map <F4> :set wrap!<CR>
 map <F5> :set list!<CR>
@@ -353,7 +359,7 @@ autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
 "nnoremap <Leader>vw ebve
 
 "autocmd FileType html,erb source ~/.vim/scripts/sparkup.vim
-source ~/.vim/scripts/sparkup.vim
+" source ~/.vim/scripts/sparkup.vim
 
 
 " from http://biodegradablegeek.com/vim/
@@ -409,3 +415,9 @@ map <Leader>rr :R<CR>
 
 map <Leader>a :Ack<Space>
 
+" Make '<Leader>U' convert the current word to upper case.
+nnoremap <Leader>U gUiw
+
+" Do the same as above to convert the current word to upper case while still
+" in insert mode
+inoremap <C-u> <esc> gUiwea

@@ -30,7 +30,10 @@ nmap <silent> <leader>s :set nolist!<CR>
 " set list listchars=tab:»·,trail:·
 
 if has("gui_running")
+  " DejaVu is needed for OA MBP
   set gfn=DejaVu\ Sans\ Mono:h21
+  " Monaco is needed for Kevin's MBP for MacVim
+  "set gfn=Monaco:h21
   set co=107
   set lines=30
 endif
@@ -324,6 +327,7 @@ endfunction
 " turn on spelling when entering a text file: 
 "autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us | set tw=78 
 autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""

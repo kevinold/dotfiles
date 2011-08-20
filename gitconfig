@@ -1,27 +1,35 @@
-[user]
-	name = Ben Orenstein
-	email = ben.orenstein@gmail.com 
-[alias]
-	co = checkout
-[color]
-	diff = auto
-	status = auto
-	branch = auto
-
-[color "diff"]
-        meta = yellow 
-
 [core]
-	excludesfile = /home/beno/.gitignore
-	editor = vim
-[apply]
-	whitespace = nowarn
-
+    pager = less -r
+[color]
+	status = auto
+	diff = auto
+	interactive = auto
 [alias]
-      lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-[help]
-	autocorrect = 1
-[branch]
-	autosetupmerge = true
-[push]
-	default = tracking
+	ci = commit
+	co = checkout
+	st = status
+	br = branch
+	sb = show-branch
+    lo = log -p  # always show patches
+	di = diff
+    # from http://gugod.org/2009/01/commonly-used-git-diff-aliases.html
+    d1 = diff HEAD^
+    d2 = diff HEAD^^
+    d3 = diff HEAD^^^
+    d4 = diff HEAD^^^^
+    d5 = diff HEAD^^^^^
+    d10 = diff HEAD^^^^^^^^^^
+    publish = !sh -c 'git push origin \"$0\" && git config \"branch.$0.remote\" origin && \
+    git config \"branch.$0.merge\" \"refs/heads/$0\"'
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+  # from https://gist.github.com/1040523#gistcomment-37021
+  # prints a great report I can give to clients
+  lgp = log --pretty=format:'%aD %s'
+
+[user]
+	name = Kevin Old
+	email = kevin@kevinold.com
+[github]
+	user = kevinold
+	token = 014480fe068924f8427822eef4362591

@@ -404,6 +404,7 @@ map <Leader>rv :RSview<Space>
 map <Leader>rh :RShelper<Space>
 
 map <Leader>rj :RSjavascript<Space>
+map <Leader>rst :RSstylesheet<Space>
 
 map <Leader>rl :RSlayout<Space>
 

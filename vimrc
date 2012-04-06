@@ -336,7 +336,7 @@ endfunction
 " turn on spelling when entering a text file: 
 "autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us | set tw=78 
 autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us
-autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
+"autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -425,3 +425,6 @@ nnoremap <Leader>U gUiw
 " Do the same as above to convert the current word to upper case while still
 " in insert mode
 inoremap <C-u> <esc> gUiwea
+
+
+let g:gist_browser_command = '/Applications/Safari.app/Contents/MacOS/Safari %URL%'

@@ -426,5 +426,6 @@ nnoremap <Leader>U gUiw
 " in insert mode
 inoremap <C-u> <esc> gUiwea
 
+map <Leader>y <C-y>
 
 let g:gist_browser_command = '/Applications/Safari.app/Contents/MacOS/Safari %URL%'

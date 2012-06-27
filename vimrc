@@ -405,4 +405,8 @@ inoremap <C-u> <esc> gUiwea
 
 map <Leader>y <C-y>
 
+"zencoding - Ctrl+e to expand css selectors
+let g:user_zen_expandabbr_key = '<c-e>'
+let g:user_zen_complete_tag = 1
+
 let g:gist_browser_command = '/Applications/Safari.app/Contents/MacOS/Safari %URL%'

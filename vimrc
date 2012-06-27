@@ -365,29 +365,6 @@ autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us
 " source ~/.vim/scripts/sparkup.vim
 
 
-" from http://biodegradablegeek.com/vim/
-inoremap '      ''<Left>
-inoremap ''     '
-
-inoremap "      ""<Left>
-inoremap ""     "
-
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O<SPACE><SPACE>
-inoremap {{     {
-inoremap {}     {}
-
-inoremap (      ()<LEFT>
-inoremap (<CR>  (<CR>)<Esc>O<TAB>
-inoremap ((     (
-inoremap ()     ()
-
-inoremap [      []<Left>
-inoremap [<CR>  [<CR>]<Esc>O<TAB>
-inoremap [[     [
-inoremap []     []
-
-
 " Use Ack instead of Grep when available
 if executable("ack")
   set grepprg=ack\ -H\ --nogroup\ --nocolor

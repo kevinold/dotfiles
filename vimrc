@@ -8,9 +8,6 @@ call pathogen#infect()
 let mapleader = ","
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
-" map FuzzyFinder to ,f
-map <leader>f :execute 'FuzzyFinderFile'<CR>
-
 " from http://items.sjbach.com/319/configuring-vim-right
 " http://github.com/sjbach/env/blob/master/dotfiles/vimrc
 set hidden

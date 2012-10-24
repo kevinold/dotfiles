@@ -228,7 +228,6 @@ iab htr <tr></tr>
 iab htd <td></td>
 
 autocmd BufNewFile *.{pl,pm} call <SID>insert_header()
-autocmd BufNewFile,BufRead *.{html} set syntax=mason
 
 " Define a function that can tell me if a file is executable
 function! FileExecutable (fname)

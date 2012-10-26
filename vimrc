@@ -60,6 +60,7 @@ set pastetoggle=<F7>
 set smartindent
 "set cindent
 "#set textwidth=78                  "Wrap at this column
+set switchbuf=split
  
 " Map CTRL+J and CTRL+K to help navigate between split files
 map <C-J> <C-W>j<C-W>_

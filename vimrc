@@ -81,17 +81,17 @@ map <F5> :set list!<CR>
 
 " Perltidy stuff
 " run perltidy on entire file
-map ti :%!perltidy 
+"map ti :%!perltidy 
 " run perltidy on highlighted text/lines in visual mode
-vmap vti :!perltidy<CR>
+"vmap vti :!perltidy<CR>
 " run current line through perltidy
-map mt :.!perltidy
+"map mt :.!perltidy
 
 " Pythontidy stuff
 " run pythontidy on entire file
-map pti :%!PythonTidy.py
+"map pti :%!PythonTidy.py
 " run pythontidy on highlighted text/lines in visual mode
-vmap pvti :!PythonTidy.py<CR>
+"vmap pvti :!PythonTidy.py<CR>
 
 " Set viminfo to store last 50 edits
 " and an autocmd to take me to the last line I was editing in a file
@@ -408,3 +408,5 @@ let g:user_zen_expandabbr_key = '<c-e>'
 let g:user_zen_complete_tag = 1
 
 let g:gist_browser_command = '/Applications/Safari.app/Contents/MacOS/Safari %URL%'
+
+set iskeyword=a-z,A-Z,48-57,_,-,>

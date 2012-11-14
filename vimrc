@@ -408,3 +408,7 @@ let g:user_zen_expandabbr_key = '<c-e>'
 let g:user_zen_complete_tag = 1
 
 let g:gist_browser_command = '/Applications/Safari.app/Contents/MacOS/Safari %URL%'
+
+" Jump over closing ( " ' with l
+silent! imap <unique> <buffer> <Leader>l <Plug>delimitMateS-Tab
+

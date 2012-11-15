@@ -8,6 +8,15 @@ call pathogen#infect()
 let mapleader = ","
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 
+"Automatically reload .vimrc if it changes
+" via https://github.com/tbranyen/dotfiles/blob/master/.vimrc
+autocmd! bufwritepost .vimrc source %
+
+" Change tab stop
+" via https://github.com/tbranyen/dotfiles/blob/master/.vimrc
+map <silent> <leader>t2 :set tabstop=2 softtabstop=2 shiftwidth=2 expandtab<CR>
+map <silent> <leader>t4 :set tabstop=4 softtabstop=4 shiftwidth=4 expandtab<CR>
+
 " from http://items.sjbach.com/319/configuring-vim-right
 " http://github.com/sjbach/env/blob/master/dotfiles/vimrc
 set hidden
@@ -416,3 +425,7 @@ set iskeyword=a-z,A-Z,48-57,_,-,>
 
 " So Powerline works initially
 set laststatus=2
+
+" Surround a line with a tag
+" via https://github.com/tbranyen/dotfiles/blob/master/.vimrc
+map <leader>tw ysst

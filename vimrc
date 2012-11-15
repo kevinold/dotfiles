@@ -413,3 +413,6 @@ let g:gist_browser_command = '/Applications/Safari.app/Contents/MacOS/Safari %UR
 silent! imap <unique> <buffer> <Leader>l <Plug>delimitMateS-Tab
 
 set iskeyword=a-z,A-Z,48-57,_,-,>
+
+" So Powerline works initially
+set laststatus=2

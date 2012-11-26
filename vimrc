@@ -429,3 +429,10 @@ set laststatus=2
 " Surround a line with a tag
 " via https://github.com/tbranyen/dotfiles/blob/master/.vimrc
 map <leader>tw ysst
+
+" Sync syntax highlighting if it breaks
+"syntax sync fromstart
+"syntax sync minlines=200
+autocmd BufEnter * :syntax sync fromstart
+noremap <Leader>ss <Esc>:syntax sync fromstart<CR>
+inoremap <Leader>ss <C-o>:syntax sync fromstart<CR>

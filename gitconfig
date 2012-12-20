@@ -33,15 +33,16 @@
   bak = !git branch `git br | grep '*' | sed -e 's/* /BAK_/'`  # create backup branch for current branch
   prunelocal = !sh -c 'git branch -d `git branch --merged | grep -v \"^*\\|master\"`'
   todo = grep --heading --break -e 'FIX:*' -e 'TODO:*'
-    # from http://gugod.org/2009/01/commonly-used-git-diff-aliases.html
-    d1 = diff HEAD^
-    d2 = diff HEAD^^
-    d3 = diff HEAD^^^
-    d4 = diff HEAD^^^^
-    d5 = diff HEAD^^^^^
-    d10 = diff HEAD^^^^^^^^^^
-    publish = !sh -c 'git push origin \"$0\" && git config \"branch.$0.remote\" origin && \
-    git config \"branch.$0.merge\" \"refs/heads/$0\"'
+
+  # from http://gugod.org/2009/01/commonly-used-git-diff-aliases.html
+  d1 = diff HEAD^
+  d2 = diff HEAD^^
+  d3 = diff HEAD^^^
+  d4 = diff HEAD^^^^
+  d5 = diff HEAD^^^^^
+  d10 = diff HEAD^^^^^^^^^^
+  publish = !sh -c 'git push origin \"$0\" && git config \"branch.$0.remote\" origin && \
+  git config \"branch.$0.merge\" \"refs/heads/$0\"'
   lg = log -n 15 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 

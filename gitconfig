@@ -21,6 +21,8 @@
   ss = stash save
   mp = push origin master
   mpd = push --dry-run origin master
+  pu = push
+  pudr = push --dry-run
   rid = rebase master --ignore-date
   unstage = reset HEAD
   staged = diff --cached

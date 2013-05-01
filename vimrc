@@ -436,3 +436,16 @@ map <leader>tw ysst
 autocmd BufEnter * :syntax sync fromstart
 noremap <Leader>ss <Esc>:syntax sync fromstart<CR>
 inoremap <Leader>ss <C-o>:syntax sync fromstart<CR>
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['html'] = 'html, javascript, javascript-jquery'
+
+"let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_mruf_relative = 1
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules)$',
+  \ }
+  "\ 'file': '\v\.(exe|so|dll)$',
+  "\ 'link': 'some_bad_symbolic_links',

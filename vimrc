@@ -48,6 +48,9 @@ Bundle "scrooloose/syntastic"
 " Color coding of pairs of parenthesis, braces and brackets
 Bundle "kien/rainbow_parentheses.vim"
 
+" Git Gutter
+Bundle 'airblade/vim-gitgutter'
+
 " Git wrapper for vim
 Bundle 'tpope/vim-fugitive'
 
@@ -273,7 +276,8 @@ hi CursorLine ctermbg=LightGrey guibg=#dbdbdb gui=none
 " Match parens and brackets with a subtle color
 "hi MatchParen ctermbg=LightGrey guibg=#dbdbdb gui=none
 
-
+" Make vim-gitgutter background color be white
+highlight clear SignColumn
 
 " TagList plugin
 "nnoremap <silent> <F12> :TlistOpen<CR>

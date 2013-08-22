@@ -1,8 +1,9 @@
 " Look for specific filetype specific definitions in .vim/after/ftplugin and
 " ./vim/ftplugin
 "
-" Load pathogen
-call pathogen#infect()
+
+" Vundle and bundle configuration
+source ~/dotfiles/vundlerc
 
 " from http://weblog.jamisbuck.org/2008/11/17/vim-follow-up
 let mapleader = ","

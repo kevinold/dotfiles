@@ -9,6 +9,23 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+" Ultimate auto-completion system for Vim
+Bundle "git://github.com/ervandew/supertab.git"
+
+" Text Manipulation:
+  " An extensible & universal comment vim-plugin that also handles embedded filetypes
+  Bundle "git://github.com/tomtom/tcomment_vim.git"
+
+" HTML And XML:
+  " zen-coding for vim
+  "Bundle "git://github.com/mattn/zencoding-vim.git"
+
+  " MatchParen for HTML tags
+  Bundle "git://github.com/gregsexton/MatchTag.git"
+
+  " Provides sgml (xml, html, etc.) end tag completion
+  Bundle "git://github.com/ervandew/sgmlendtag.git"
+
 " Git
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
@@ -19,19 +36,21 @@ Bundle 'mattn/gist-vim'
 " System
 Bundle 'msanders/snipmate.vim'
 Bundle 'krisleech/snipmate-snippets'
-"Bundle 'scrooloose/nerdcommenter'
-"Bundle 'scrooloose/nerdtree'
 Bundle 'surround.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'mileszs/ack.vim'
-"Bundle 'epmatsw/ag.vim'
 Bundle 'Lokaltog/vim-powerline'
-"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Bundle 'godlygeek/tabular'
+Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
+
+"Bundle 'epmatsw/ag.vim'
+"Bundle 'scrooloose/nerdcommenter'
+"Bundle 'scrooloose/nerdtree'
+
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Bundle 'terryma/vim-multiple-cursors'
-"
-"" Ruby
+
+" Ruby
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rvm'

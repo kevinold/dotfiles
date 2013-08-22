@@ -2,11 +2,150 @@
 " ./vim/ftplugin
 "
 set encoding=utf-8
-
 "set t_Co=256
 
 " Vundle and bundle configuration
-source ~/dotfiles/vundlerc
+set nocompatible " be iMproved
+filetype off " required for Vundle
+
+let g:vundle_default_git_proto = 'git' 
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+" let Vundle manage Vundle
+Bundle 'gmarik/vundle'
+
+" Ultimate auto-completion system for Vim
+Bundle "ervandew/supertab"
+
+" An extensible & universal comment vim-plugin that also handles embedded filetypes
+Bundle "tomtom/tcomment_vim"
+
+" MatchParen for HTML tags
+Bundle "gregsexton/MatchTag"
+
+" Provides sgml (xml, html, etc.) end tag completion
+Bundle "ervandew/sgmlendtag"
+
+" Functions for doing case-persistant substitutions
+Bundle "vim-scripts/keepcase.vim"
+
+" Motion through CamelCaseWords and underscore_notation.
+Bundle "vim-scripts/camelcasemotion"
+
+" quoting/parenthesizing made simple
+Bundle "tpope/vim-surround"
+
+" Easily search for, substitute, and abbreviate multiple variants of a word
+Bundle "tpope/vim-abolish"
+
+" A vim plugin that should simplify the transition between multiline and single-line code
+Bundle "AndrewRadev/splitjoin.vim"
+
+" Syntax checking hacks for vim
+Bundle "scrooloose/syntastic"
+
+" Color coding of pairs of parenthesis, braces and brackets
+Bundle "kien/rainbow_parentheses.vim"
+
+" Git wrapper for vim
+Bundle 'tpope/vim-fugitive'
+
+" Vim Git runtime files
+Bundle 'tpope/vim-git'
+
+" Webapi neede for gist-vim
+Bundle 'mattn/webapi-vim'
+
+" Gist vim
+Bundle 'mattn/gist-vim'
+
+" Snippmate
+Bundle 'msanders/snipmate.vim'
+
+" Snippets for Snipmate
+Bundle 'krisleech/snipmate-snippets'
+
+" Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
+Bundle 'Raimondi/delimitMate'
+
+" Ack
+Bundle 'mileszs/ack.vim'
+
+" Powerline
+Bundle 'Lokaltog/vim-powerline'
+
+" Vim script for text filtering and alignment
+Bundle 'godlygeek/tabular'
+
+" Fuzzy file, buffer, mru and tag finder
+Bundle 'kien/ctrlp.vim'
+
+" Vim/Ruby Configuration Files
+Bundle 'vim-ruby/vim-ruby'
+
+" Ruby on Rails power tools
+Bundle 'tpope/vim-rails'
+
+" Use rails.vim mappings but in projects which are not Rails projects
+Bundle "git://github.com/tpope/vim-rake.git"
+
+" Rvm support
+Bundle 'tpope/vim-rvm'
+
+" wisely add 'end' in Ruby, endfunction/endif/more in vim script, etc
+Bundle 'tpope/vim-endwise'
+
+" Add support for Gemfile/Gemfile.lock syntax highlighting and tag paths for bundled gems
+Bundle "tpope/vim-bundler"
+
+" Add support for rbenv including paths and tag support
+Bundle "tpope/vim-rbenv"
+
+" JavaScript
+Bundle 'pangloss/vim-javascript'
+
+" Coffeescript
+Bundle 'kchmck/vim-coffee-script'
+
+" Jade plugin
+Bundle 'digitaltoad/vim-jade'
+
+" Jasmine Plugin for Vim
+Bundle "claco/jasmine.vim"
+
+" JSON Highlighting for Vim
+Bundle "leshill/vim-json"
+
+" Haml
+Bundle 'tpope/vim-haml'
+
+" Slim
+Bundle 'slim-template/vim-slim'
+
+" Markdown
+Bundle 'tpope/vim-markdown'
+
+" Pastie.org plugin
+Bundle 'tpope/vim-pastie'
+
+" HTML5 omnicomplete
+Bundle 'othree/html5.vim'
+
+" Emmet (formerly zencoding)
+Bundle 'mattn/emmet-vim'
+
+" Vim plugin for Handlebars
+Bundle "nono/vim-handlebars"
+
+" Add extra syntax highlighting for SCSS files
+Bundle "cakebaker/scss-syntax.vim"
+
+" Syntax highlighting for nginx configuration files
+Bundle "mutewinter/nginx.vim"
+
+filetype plugin indent on " required!
+
 
 " Load snippets from multiple directories
 let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"

@@ -1,6 +1,9 @@
 " Look for specific filetype specific definitions in .vim/after/ftplugin and
 " ./vim/ftplugin
 "
+set encoding=utf-8
+
+"set t_Co=256
 
 " Vundle and bundle configuration
 source ~/dotfiles/vundlerc

@@ -343,7 +343,7 @@ endfunction
 " turn on spelling when entering a text file: 
 "autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us | set tw=78 
 autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us
-"autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
+autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -447,5 +447,15 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules)$',
   \ }
+
+" Rails specific CtrlP mappings
+map <leader>gs :CtrlP app/assets/stylesheets<cr>
+map <leader>gj :CtrlP app/assets/javascripts<cr>
+map <leader>gv :CtrlP app/views<cr>
+map <leader>gc :CtrlP app/controllers<cr>
+map <leader>gm :CtrlP app/models<cr>
+map <leader>gh :CtrlP app/helpers<cr>
+map <leader>gt :CtrlP spec<cr>
+
   "\ 'file': '\v\.(exe|so|dll)$',
   "\ 'link': 'some_bad_symbolic_links',

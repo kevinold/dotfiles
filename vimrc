@@ -5,6 +5,9 @@
 " Vundle and bundle configuration
 source ~/dotfiles/vundlerc
 
+" Load snippets from multiple directories
+let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"
+
 " from http://weblog.jamisbuck.org/2008/11/17/vim-follow-up
 let mapleader = ","
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>

@@ -40,6 +40,7 @@ Bundle 'tpope/vim-endwise'
 "Bundle 'skalnik/vim-vroom'
 
 " JavaScript/CoffeeScript
+Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 

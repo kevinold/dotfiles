@@ -26,6 +26,32 @@ Bundle "git://github.com/ervandew/supertab.git"
   " Provides sgml (xml, html, etc.) end tag completion
   Bundle "git://github.com/ervandew/sgmlendtag.git"
 
+  " Functions for doing case-persistant substitutions
+  Bundle "git://github.com/vim-scripts/keepcase.vim.git"
+
+  " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
+  Bundle "git://github.com/Townk/vim-autoclose.git"
+
+  " Motion through CamelCaseWords and underscore_notation.
+  Bundle "git://github.com/vim-scripts/camelcasemotion.git"
+
+  " quoting/parenthesizing made simple
+  Bundle "git://github.com/tpope/vim-surround.git"
+
+  " Easily search for, substitute, and abbreviate multiple variants of a word
+  Bundle "git://github.com/tpope/vim-abolish.git"
+
+  " A vim plugin that should simplify the transition between multiline and single-line code
+  Bundle "git://github.com/AndrewRadev/splitjoin.vim.git"
+
+" Programming:
+  " General:
+    " Syntax checking hacks for vim
+    Bundle "git://github.com/scrooloose/syntastic.git"
+
+    " Color coding of pairs of parenthesis, braces and brackets
+    Bundle "git://github.com/kien/rainbow_parentheses.vim.git"
+
 " Git
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
@@ -36,7 +62,6 @@ Bundle 'mattn/gist-vim'
 " System
 Bundle 'msanders/snipmate.vim'
 Bundle 'krisleech/snipmate-snippets'
-Bundle 'surround.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'mileszs/ack.vim'
 Bundle 'Lokaltog/vim-powerline'
@@ -57,11 +82,22 @@ Bundle 'tpope/vim-rvm'
 Bundle 'tpope/vim-endwise'
 "Bundle 't9md/vim-ruby-xmpfilter'
 "Bundle 'skalnik/vim-vroom'
+    " Add support for Gemfile/Gemfile.lock syntax highlighting and tag paths for bundled gems
+    Bundle "git://github.com/tpope/vim-bundler.git"
+
+    " Add support for rbenv including paths and tag support
+    Bundle "git://github.com/tpope/vim-rbenv.git"
 
 " JavaScript/CoffeeScript
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
+
+    " Jasmine Plugin for Vim
+    Bundle "git://github.com/claco/jasmine.vim.git"
+
+    " JSON Highlighting for Vim
+    Bundle "git://github.com/leshill/vim-json.git"
 
 " Other
 Bundle 'tpope/vim-haml'
@@ -70,6 +106,16 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-pastie'
 Bundle 'othree/html5.vim'
 Bundle 'mattn/emmet-vim'
+  " Templating:
+    " Vim plugin for Handlebars
+    Bundle "git://github.com/nono/vim-handlebars.git"
+
+    " Add extra syntax highlighting for SCSS files
+    Bundle "git://github.com/cakebaker/scss-syntax.vim.git"
+
+  " Nginx:
+    " Syntax highlighting for nginx configuration files
+    Bundle "git://github.com/mutewinter/nginx.vim.git"
 
 "" Colorscheme
 "Bundle 'altercation/vim-colors-solarized'

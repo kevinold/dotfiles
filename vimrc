@@ -132,7 +132,7 @@ hi Cursor ctermbg=LightCyan guibg=#cd4e00 guifg=bg gui=none
 hi CursorColumn ctermbg=DarkGrey guibg=#dbdbdb gui=none
 hi CursorLine ctermbg=LightGrey guibg=#dbdbdb gui=none
 " Match parens and brackets with a subtle color
-hi MatchParen ctermbg=LightGrey guibg=#dbdbdb gui=none
+"hi MatchParen ctermbg=LightGrey guibg=#dbdbdb gui=none
 
 
 

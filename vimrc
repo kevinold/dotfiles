@@ -43,7 +43,7 @@ Bundle "tpope/vim-abolish"
 Bundle "AndrewRadev/splitjoin.vim"
 
 " Syntax checking hacks for vim
-Bundle "scrooloose/syntastic"
+"Bundle "scrooloose/syntastic"
 
 " Color coding of pairs of parenthesis, braces and brackets
 Bundle "kien/rainbow_parentheses.vim"

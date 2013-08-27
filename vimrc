@@ -8,6 +8,15 @@ set encoding=utf-8
 set nocompatible " be iMproved
 filetype off " required for Vundle
 
+set shell=bash
+
+if !empty($MY_RUBY_HOME)
+ let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
+endif
+
+set lazyredraw
+"set ttyfast                               " Send more characters when redrawing the screen
+
 let g:vundle_default_git_proto = 'git' 
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
@@ -103,7 +112,7 @@ Bundle 'tpope/vim-endwise'
 Bundle "tpope/vim-bundler"
 
 " Add support for rbenv including paths and tag support
-Bundle "tpope/vim-rbenv"
+"Bundle "tpope/vim-rbenv"
 
 " JavaScript
 Bundle 'pangloss/vim-javascript'
@@ -382,9 +391,11 @@ map <leader>tw ysst
 " Sync syntax highlighting if it breaks
 "syntax sync fromstart
 "syntax sync minlines=200
-autocmd BufEnter * :syntax sync fromstart
-noremap <Leader>ss <Esc>:syntax sync fromstart<CR>
-inoremap <Leader>ss <C-o>:syntax sync fromstart<CR>
+"autocmd BufEnter * :syntax sync fromstart
+"noremap <Leader>ss <Esc>:syntax sync fromstart<CR>
+"inoremap <Leader>ss <C-o>:syntax sync fromstart<CR>
+
+set nocursorcolumn 
 
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}

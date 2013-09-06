@@ -103,7 +103,7 @@ Bundle 'tpope/vim-rails'
 Bundle "git://github.com/tpope/vim-rake.git"
 
 " Rvm support
-Bundle 'tpope/vim-rvm'
+"Bundle 'tpope/vim-rvm'
 
 " wisely add 'end' in Ruby, endfunction/endif/more in vim script, etc
 Bundle 'tpope/vim-endwise'
@@ -112,7 +112,7 @@ Bundle 'tpope/vim-endwise'
 Bundle "tpope/vim-bundler"
 
 " Add support for rbenv including paths and tag support
-"Bundle "tpope/vim-rbenv"
+Bundle "tpope/vim-rbenv"
 
 " JavaScript
 Bundle 'pangloss/vim-javascript'
@@ -156,6 +156,8 @@ Bundle "cakebaker/scss-syntax.vim"
 " Syntax highlighting for nginx configuration files
 Bundle "mutewinter/nginx.vim"
 
+" Syntax highlighting for LESS files
+Bundle 'groenewege/vim-less'
 
 " Load snippets from multiple directories
 let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"

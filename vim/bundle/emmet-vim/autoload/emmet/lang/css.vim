@@ -72,10 +72,22 @@ function! emmet#lang#css#parseIntoTree(abbr, type)
     if !empty(snippets)
       let snippet_name = tag_name
       if !has_key(snippets, snippet_name)
-        let pat = '^' . join(split(tag_name, '\zs'), '\(\|[^-]\+-\)')
+        let pat = '^' . join(split(tag_name, '\zs'), '\%(\|[^:-]\+-\)')
+		let g:hoge = pat
         let vv = filter(sort(keys(snippets)), 'snippets[v:val] =~ pat')
         if len(vv) > 0
           let snippet_name = vv[0]
+        else
+          let pat = '^' . join(split(tag_name, '\zs'), '\%(\|[^:-]\+-*\)')
+          let vv = filter(sort(keys(snippets)), 'snippets[v:val] =~ pat')
+          let minl = -1
+          for vk in vv
+            let vvs = snippets[vk]
+            if minl == -1 || len(vvs) < minl
+              let snippet_name = vk
+              let minl = len(vvs)
+            endif
+          endfor
         endif
       endif
       if has_key(snippets, snippet_name)
@@ -130,9 +142,9 @@ function! emmet#lang#css#toString(settings, current, type, inline, filters, item
   let current = a:current
   let value = current.value[1:-2]
   if emmet#useFilter(a:filters, 'fc')
-    let value = substitute(value, '\([^:]\+\):\([^;]*;\)', '\1: \2', 'g')
+    let value = substitute(value, '\([^:]\+\):\([^;]*\)', '\1: \2', 'g')
   else
-    let value = substitute(value, '\([^:]\+\):\([^;]*;\)', '\1:\2', 'g')
+    let value = substitute(value, '\([^:]\+\):\([^;]*\)', '\1:\2', 'g')
   endif
   if current.important
     let value = substitute(value, ';', ' !important;', '')

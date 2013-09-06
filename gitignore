@@ -6,3 +6,4 @@ log/
 config/database.yml
 db/*.sqlite3
 .netrwhist
+public/javascripts/translations/defaults.js

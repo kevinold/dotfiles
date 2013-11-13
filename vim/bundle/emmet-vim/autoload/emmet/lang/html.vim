@@ -1,6 +1,6 @@
 let s:mx = '\([+>]\|[<^]\+\)\{-}\s*'
 \     .'\((*\)\{-}\s*'
-\       .'\([@#.]\{-}[a-zA-Z\!][a-zA-Z0-9:_\!\-$]*\|{\%([^$}]\+\|\$#\|\${\w\+}\|\$\+\)*}[ \t\r\n}]*\)'
+\       .'\([@#.]\{-}[a-zA-Z\!][a-zA-Z0-9:_\!\-$]*\|{\%([^$}]\+\|\$#\|\${\w\+}\|\$\+\)*}*[ \t\r\n}]*\)'
 \       .'\('
 \         .'\%('
 \           .'\%(#{[{}a-zA-Z0-9_\-\$]\+\|#[a-zA-Z0-9_\-\$]\+\)'
@@ -8,7 +8,7 @@ let s:mx = '\([+>]\|[<^]\+\)\{-}\s*'
 \           .'\|\%(\.{[{}a-zA-Z0-9_\-\$]\+\|\.[a-zA-Z0-9_\-\$]\+\)'
 \         .'\)*'
 \       .'\)'
-\       .'\%(\({\%([^$}]\+\|\$#\|\${\w\+}\|\$\+\)*}\)\)\{0,1}'
+\       .'\%(\({\%([^$}]\+\|\$#\|\${\w\+}\|\$\+\)*}\+\)\)\{0,1}'
 \         .'\%(\(@-\{0,1}[0-9]*\)\{0,1}\*\([0-9]\+\)\)\{0,1}'
 \     .'\(\%()\%(\(@-\{0,1}[0-9]*\)\{0,1}\*[0-9]\+\)\{0,1}\)*\)'
 
@@ -82,7 +82,7 @@ function! emmet#lang#html#parseIntoTree(abbr, type)
       let attributes = tag_name . attributes
       let tag_name = 'div'
     endif
-    if tag_name =~ '.!$'
+    if tag_name =~ '[^!]!$'
       let tag_name = tag_name[:-2]
       let important = 1
     endif
@@ -282,7 +282,10 @@ function! emmet#lang#html#parseIntoTree(abbr, type)
           let cl = last.child
           let cls = []
           for c in range(n[1:])
-            let cls += cl
+            for cc in cl
+              let cc.basevalue = c + 1
+            endfor
+            let cls += deepcopy(cl)
           endfor
           let last.child = cls
         endif
@@ -641,6 +644,15 @@ function! emmet#lang#html#balanceTag(flag) range
     silent! exe "normal! gv"
   else
     call setpos('.', curpos)
+  endif
+endfunction
+
+function! emmet#lang#html#moveNextPrevItem(flag)
+  silent! exe "normal \<esc>"
+  let mx = '\%([0-9a-zA-Z-:]\+\%(="[^"]*"\|=''[^'']*''\|[^ ''">\]]*\)\{0,1}\)'
+  let pos = searchpos('\s'.mx.'\zs', '')
+  if pos != [0,0]
+    call feedkeys('v?\s\zs'.mx."\<cr>", '')
   endif
 endfunction
 

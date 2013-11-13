@@ -4,6 +4,8 @@
 which provides support for expanding abbreviations similar to
 [emmet](http://emmet.io/).
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mattn/emmet-vim/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 ## Installation
 
 [Download zip file](http://www.vim.org/scripts/script.php?script_id=2981):
@@ -15,6 +17,10 @@ To install using pathogen.vim:
 
     cd ~/.vim/bundle
     unzip /path/to/emmet-vim.zip
+    
+To install using [Vundle|https://github.com/gmarik/vundle]:
+    #add this line to your .vimrc file
+    Bundle "mattn/emmet-vim"
 
 To checkout the source from repository:
 
@@ -67,6 +73,13 @@ you can use set these options in `vimrc`:
 let g:user_emmet_mode='n'    "only enable normal mode functions.
 let g:user_emmet_mode='inv'  "enable all functions, which is equal to
 let g:user_emmet_mode='a'    "enable all function in all mode.
+```
+
+## Enable just for html/css
+
+```vim
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 ```
 
 ## Project Authors

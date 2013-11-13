@@ -1,5 +1,5 @@
 function! emmet#lang#sass#findTokens(str)
-  return emmet#lang#html#findTokens(a:str)
+  return a:str
 endfunction
 
 function! emmet#lang#sass#parseIntoTree(abbr, type)
@@ -137,6 +137,10 @@ function! emmet#lang#sass#balanceTag(flag) range
     normal! V
     call setpos('.', [0, sn, 1, 0])
   endif
+endfunction
+
+function! emmet#lang#sass#moveNextPrevItem(flag)
+  return emmet#lang#sass#moveNextPrev(a:flag)
 endfunction
 
 function! emmet#lang#sass#moveNextPrev(flag)

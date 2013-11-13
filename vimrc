@@ -58,7 +58,7 @@ Bundle "AndrewRadev/splitjoin.vim"
 Bundle "kien/rainbow_parentheses.vim"
 
 " Git Gutter
-Bundle 'airblade/vim-gitgutter'
+"Bundle 'airblade/vim-gitgutter'
 
 " Git wrapper for vim
 Bundle 'tpope/vim-fugitive'
@@ -72,8 +72,10 @@ Bundle 'mattn/webapi-vim'
 " Gist vim
 Bundle 'mattn/gist-vim'
 
-" Snippmate
-Bundle 'msanders/snipmate.vim'
+" Snipmate
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle 'garbas/vim-snipmate'
 
 " Snippets for Snipmate
 Bundle 'krisleech/snipmate-snippets'

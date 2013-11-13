@@ -1,6 +1,7 @@
 [core]
   pager = less -E -F -X
   excludesfile = ~/.gitignore
+  editor = "/usr/local/bin/vim"
 [color]
 	status = auto
 	diff = auto

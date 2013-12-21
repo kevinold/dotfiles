@@ -9,3 +9,5 @@ db/*.sqlite3
 public/javascripts/translations/defaults.js
 node_modules
 Gruntfile.js
+.rbenv-gemsets
+.gems/

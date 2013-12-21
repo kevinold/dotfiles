@@ -4,6 +4,8 @@
 set encoding=utf-8
 "set t_Co=256
 
+runtime! macros/matchit.vim
+
 " Vundle and bundle configuration
 set nocompatible " be iMproved
 filetype off " required for Vundle
@@ -118,6 +120,9 @@ Bundle "tpope/vim-rbenv"
 
 " JavaScript
 Bundle 'pangloss/vim-javascript'
+
+" JST/EJS
+"Bundle 'briancollins/vim-jst'
 
 " Coffeescript
 Bundle 'kchmck/vim-coffee-script'
@@ -342,6 +347,8 @@ endif
 " For Haml
 au! BufRead,BufNewFile *.haml setfiletype haml
 
+au! BufRead,BufNewFile *.ejs setfiletype javascript
+
 " vim-rails
 " from http://github.com/kossnocorp/dotvim/blob/master/config/shortcuts.vim
 map <Leader>rc :RScontroller<Space>
@@ -421,3 +428,8 @@ map <leader>gt :CtrlP spec<cr>
 
   "\ 'file': '\v\.(exe|so|dll)$',
   "\ 'link': 'some_bad_symbolic_links',
+
+" Buffer navigation with write
+" via http://superuser.com/a/542085
+nnoremap <C-n> :wnext<CR>
+nnoremap <C-b> :wprevious<CR>

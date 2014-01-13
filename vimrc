@@ -103,6 +103,9 @@ Bundle 'vim-ruby/vim-ruby'
 " Ruby on Rails power tools
 Bundle 'tpope/vim-rails'
 
+" Ragtag
+Bundle 'tpope/vim-ragtag'
+
 " Use rails.vim mappings but in projects which are not Rails projects
 Bundle "git://github.com/tpope/vim-rake.git"
 
@@ -122,7 +125,7 @@ Bundle "tpope/vim-rbenv"
 Bundle 'pangloss/vim-javascript'
 
 " JST/EJS
-"Bundle 'briancollins/vim-jst'
+Bundle 'briancollins/vim-jst'
 
 " Coffeescript
 Bundle 'kchmck/vim-coffee-script'
@@ -431,5 +434,5 @@ map <leader>gt :CtrlP spec<cr>
 
 " Buffer navigation with write
 " via http://superuser.com/a/542085
-nnoremap <C-n> :wnext<CR>
-nnoremap <C-b> :wprevious<CR>
+"nnoremap <C-n> :wnext<CR>
+"nnoremap <C-b> :wprevious<CR>

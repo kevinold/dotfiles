@@ -20,7 +20,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 "if !empty($MY_RUBY_HOME)
- let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
+ "let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
 "endif
 
 " let Vundle manage Vundle
@@ -436,3 +436,9 @@ map <leader>gt :CtrlP spec<cr>
 " via http://superuser.com/a/542085
 "nnoremap <C-n> :wnext<CR>
 "nnoremap <C-b> :wprevious<CR>
+
+"tComment
+"map over the tcomment command
+map <leader>c :TComment<cr>
+"This does tcomment for html
+map <leader>ch :TCommentAs html<cr>

@@ -134,7 +134,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 
 " Jasmine Plugin for Vim
-Bundle "claco/jasmine.vim"
+"Bundle "claco/jasmine.vim"
 
 " JSON Highlighting for Vim
 Bundle "leshill/vim-json"

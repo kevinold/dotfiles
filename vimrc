@@ -202,9 +202,14 @@ filetype plugin on
 filetype indent on
 " Display extra whitespace toggled by ,s
 set listchars=tab:>-,trail:·,eol:$
-nmap <silent> <leader>s :set nolist!<CR>
+nmap <silent> <leader>ss :set nolist!<CR>
 " Another recipe to display extra whitespace from http://github.com/jferris/config_files/blob/master/vimrc
 " set list listchars=tab:»·,trail:·
+
+" Save all the things.
+" per http://danott.co/posts/instant-savings-in-vim.html
+nmap <Leader>s :w<CR>
+imap <Leader>s <ESC>:w<CR>
 
 if has("gui_running")
   " DejaVu is needed for Kevin's MBP for MacVim

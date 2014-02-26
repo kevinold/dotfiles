@@ -451,7 +451,9 @@ map <leader>c :TComment<cr>
 map <leader>ch :TCommentAs html<cr>
 
 " Solarized stuff
-let g:solarized_termcolors=256
+set background=dark
+"let g:solarized_termcolors=256
 let g:solarized_termtrans = 1
-set background=light
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 colorscheme solarized

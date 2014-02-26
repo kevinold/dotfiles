@@ -910,9 +910,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 110 924 485 0 0 1280 778 </string>
+	<string>1236 350 605 485 0 0 2560 1418 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 714 1271 512 0 0 2560 1418 </string>
+	<string>1080 170 0 0 0 0 1280 778 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1107,7 +1107,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>109</integer>
+			<integer>130</integer>
 			<key>Command</key>
 			<string>login -fp kevinold</string>
 			<key>Cursor Color</key>
@@ -1244,7 +1244,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>2</integer>
 			<key>Rows</key>
-			<integer>40</integer>
+			<integer>30</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -2099,7 +2099,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>109</integer>
+			<integer>130</integer>
 			<key>Command</key>
 			<string>ssh 192.168.61.1</string>
 			<key>Cursor Color</key>
@@ -2148,7 +2148,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Guid</key>
-			<string>BC74B766-A834-4C19-8595-66DCC00D952F</string>
+			<string>8B844427-58FF-4169-A287-F5285422E93A</string>
 			<key>Hide After Opening</key>
 			<false/>
 			<key>Horizontal Spacing</key>
@@ -2238,7 +2238,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>2</integer>
 			<key>Rows</key>
-			<integer>40</integer>
+			<integer>30</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -2475,7 +2475,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2013-12-20T21:54:31Z</date>
+	<date>2014-02-21T20:53:24Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>

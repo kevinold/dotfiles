@@ -26,6 +26,8 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+Bundle 'altercation/vim-colors-solarized'
+
 " Ultimate auto-completion system for Vim
 Bundle "ervandew/supertab"
 
@@ -447,3 +449,9 @@ map <leader>gt :CtrlP spec<cr>
 map <leader>c :TComment<cr>
 "This does tcomment for html
 map <leader>ch :TCommentAs html<cr>
+
+" Solarized stuff
+let g:solarized_termcolors=256
+let g:solarized_termtrans = 1
+set background=light
+colorscheme solarized

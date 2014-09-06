@@ -171,6 +171,12 @@ Bundle "mutewinter/nginx.vim"
 " Syntax highlighting for LESS files
 Bundle 'groenewege/vim-less'
 
+Bundle 'vim-scripts/c.vim'
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'vim-erlang/vim-erlang-runtime'
+
+Bundle 'mxw/vim-jsx.git'
+
 " Load snippets from multiple directories
 let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"
 
@@ -424,7 +430,7 @@ let g:snipMate.scope_aliases['html'] = 'html, javascript, javascript-jquery'
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules)$',
+  \ 'dir':  '\v[\/](node_modules|dist$)$',
   \ }
 
 " Rails specific CtrlP mappings

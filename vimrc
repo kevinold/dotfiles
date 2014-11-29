@@ -84,6 +84,9 @@ Bundle 'garbas/vim-snipmate'
 " Snippets for Snipmate
 Bundle 'krisleech/snipmate-snippets'
 
+" vim-react-snippets:
+Bundle "justinj/vim-react-snippets"
+
 " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
 Bundle 'Raimondi/delimitMate'
 
@@ -450,6 +453,10 @@ map <leader>gt :CtrlP spec<cr>
 "nnoremap <C-n> :wnext<CR>
 "nnoremap <C-b> :wprevious<CR>
 
+" Use CtrlP as buffer navigator per
+" http://stackoverflow.com/a/9151056
+"map <leader>b :CtrlPBuffer
+
 "tComment
 "map over the tcomment command
 map <leader>c :TComment<cr>
@@ -463,3 +470,4 @@ let g:solarized_termtrans = 1
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 colorscheme solarized
+

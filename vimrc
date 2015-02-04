@@ -429,7 +429,19 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['html'] = 'html, javascript, javascript-jquery'
 
+""""""""""
+" CtrlP config
+""""""""""
 "let g:ctrlp_cmd = 'CtrlPMRU'
+"let g:ctrlp_max_files=0
+
+"Keep caches between sessions - f5 to refresh
+"let g:ctrlp_clear_cache_on_exit = 0
+
+" via https://news.ycombinator.com/item?id=4470283
+" It lets CtrlP use git to list files, which is much faster for large project
+" tweaked to include untracked files, but honors gitignores
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -co']
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {

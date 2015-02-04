@@ -448,6 +448,13 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](node_modules|dist$)$',
   \ }
 
+" specify how the newly created file is to be opened when pressing <C-y>
+" open in horizontal split
+let g:ctrlp_open_new_file = 'h'
+
+" Enable opening multiple files with <c-z> and <c-o> horizontal split
+let g:ctrlp_open_multiple_files = 'h'
+
 " Rails specific CtrlP mappings
 map <leader>gs :CtrlP app/assets/stylesheets<cr>
 map <leader>gj :CtrlP app/assets/javascripts<cr>

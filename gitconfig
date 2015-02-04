@@ -86,6 +86,8 @@
   rh1 = reset HEAD^ --hard
   rh2 = reset HEAD^^ --hard
 
+[merge]
+  tool = vimdiff
 [user]
 	name = Kevin Old
 	email = kevin@kevinold.com
@@ -94,3 +96,7 @@
   #token = 014480fe068924f8427822eef4362591
 [rerere]
 	enabled = 1
+[gc]
+  rerereresolved = never
+[push]
+	default = simple

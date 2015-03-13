@@ -87,6 +87,8 @@ Bundle 'krisleech/snipmate-snippets'
 " vim-react-snippets:
 Bundle "justinj/vim-react-snippets"
 
+Bundle 'honza/vim-snippets'
+
 " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
 Bundle 'Raimondi/delimitMate'
 
@@ -179,6 +181,8 @@ Bundle 'elixir-lang/vim-elixir'
 Bundle 'vim-erlang/vim-erlang-runtime'
 
 Bundle 'mxw/vim-jsx.git'
+
+Bundle 'moll/vim-node'
 
 " Load snippets from multiple directories
 let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"
@@ -425,6 +429,7 @@ autocmd BufEnter * :syntax sync fromstart
 "noremap <Leader>ss <Esc>:syntax sync fromstart<CR>
 "inoremap <Leader>ss <C-o>:syntax sync fromstart<CR>
 
+let g:SuperTabNoCompleteBefore = ['&snipMateNextOrTrigger']
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['html'] = 'html, javascript, javascript-jquery'
@@ -490,3 +495,7 @@ let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 colorscheme solarized
 
+" 'Vim, gf and node from https://gist.github.com/latentflip/57bf8f9edde531ee979e
+set suffixesadd+=.js
+set suffixesadd+=.jsx
+set path+=$PWD/node_modules

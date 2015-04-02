@@ -85,7 +85,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'krisleech/snipmate-snippets'
 
 " vim-react-snippets:
-Bundle "justinj/vim-react-snippets"
+Bundle "kevinold/vim-react-snippets"
 
 Bundle 'honza/vim-snippets'
 

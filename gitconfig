@@ -55,6 +55,10 @@
   # prints a great report I can give to clients
   lgp = log --pretty=format:'%aD %s'
 
+  # Print 7 most recent branches
+  # via http://stackoverflow.com/a/5972362
+  br7 = for-each-ref --count=7 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
   grep = grep -Ii
   gr = grep -Ii
   #grep from root folder

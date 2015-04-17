@@ -58,6 +58,7 @@
   # Print 7 most recent branches
   # via http://stackoverflow.com/a/5972362
   br7 = for-each-ref --count=7 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+  br20 = for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
   grep = grep -Ii
   gr = grep -Ii

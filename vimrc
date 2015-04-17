@@ -1,8 +1,9 @@
 " Look for specific filetype specific definitions in .vim/after/ftplugin and
 " ./vim/ftplugin
 "
+set guifont=Inconsolata\ for\ Powerline
 set encoding=utf-8
-"set t_Co=256
+set t_Co=256
 
 runtime! macros/matchit.vim
 
@@ -56,13 +57,14 @@ Bundle "tpope/vim-abolish"
 Bundle "AndrewRadev/splitjoin.vim"
 
 " Syntax checking hacks for vim
-"Bundle "scrooloose/syntastic"
+Bundle "scrooloose/syntastic"
 
 " Color coding of pairs of parenthesis, braces and brackets
 Bundle "kien/rainbow_parentheses.vim"
 
 " Git Gutter
-"Bundle 'airblade/vim-gitgutter'
+Bundle 'airblade/vim-gitgutter'
+let g:gitgutter_sign_column_always = 1
 
 " Git wrapper for vim
 Bundle 'tpope/vim-fugitive'
@@ -96,7 +98,17 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'mileszs/ack.vim'
 
 " Powerline
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
+
+" Airline
+Bundle 'bling/vim-airline'
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_powerline_fonts = 1
+"let g:airline_symbols.space = "\ua0"
+"set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly"
 
 " Vim script for text filtering and alignment
 Bundle 'godlygeek/tabular'
@@ -258,7 +270,7 @@ set smartindent
 "set cindent
 "#set textwidth=78                  "Wrap at this column
 set switchbuf=split
- 
+
 " Map CTRL+J and CTRL+K to help navigate between split files
 map <C-J> <C-W>j<C-W>_
 map <C-K> <C-W>k<C-W>_
@@ -499,3 +511,6 @@ colorscheme solarized
 set suffixesadd+=.js
 set suffixesadd+=.jsx
 set path+=$PWD/node_modules
+
+"let g:syntastic_auto_loc_list=1
+let g:syntastic_javascript_checkers=['eslint']

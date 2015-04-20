@@ -4,6 +4,7 @@
 set guifont=Inconsolata\ for\ Powerline
 set encoding=utf-8
 set t_Co=256
+set number
 
 runtime! macros/matchit.vim
 
@@ -109,6 +110,9 @@ endif
 let g:airline_powerline_fonts = 1
 "let g:airline_symbols.space = "\ua0"
 "set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly"
+" disable arrows per https://github.com/bling/vim-airline/issues/17#issuecomment-22650957
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 " Vim script for text filtering and alignment
 Bundle 'godlygeek/tabular'

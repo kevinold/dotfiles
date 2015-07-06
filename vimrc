@@ -114,6 +114,12 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " Vim script for text filtering and alignment
 Bundle 'godlygeek/tabular'
 
@@ -466,15 +472,18 @@ let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files --exclude-standard -
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](node_modules|dist$)$',
+  \ 'dir':  '\v[\/](node_modules|dist|deps$)$',
   \ }
-
+"let g:ctrlp_reuse_window = 'netrw\|help\|quickfix'
+"let g:ctrlp_switch_buffer = 'e'
 " specify how the newly created file is to be opened when pressing <C-y>
 " open in horizontal split
-let g:ctrlp_open_new_file = 'h'
+"let g:ctrlp_open_new_file = 'h'
+let g:ctrlp_open_new_file = 'r'
 
 " Enable opening multiple files with <c-z> and <c-o> horizontal split
-let g:ctrlp_open_multiple_files = 'h'
+"let g:ctrlp_open_multiple_files = 'h'
+let g:ctrlp_open_multiple_files = '1ri'
 
 " Rails specific CtrlP mappings
 map <leader>gs :CtrlP app/assets/stylesheets<cr>
@@ -518,3 +527,18 @@ set path+=$PWD/node_modules
 
 "let g:syntastic_auto_loc_list=1
 let g:syntastic_javascript_checkers=['eslint']
+
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+

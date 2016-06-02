@@ -7,6 +7,8 @@
 	diff = auto
 	interactive = auto
 [alias]
+  bisect-fixed = bisect bad
+  bisect-unfixed = bisect good
 	ci = commit
 	cia = commit --amend
 	co = checkout
@@ -102,7 +104,7 @@
   #token = 014480fe068924f8427822eef4362591
 [rerere]
 	enabled = 1
-[gc]
-  rerereresolved = never
+#[gc]
+  #rerereresolved = never
 [push]
 	default = simple

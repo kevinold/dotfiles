@@ -6,6 +6,10 @@ set encoding=utf-8
 set t_Co=256
 set number
 
+set backupdir^=~/.vimbackup/
+set directory^=~/.vimbackup/
+
+autocmd filetype crontab setlocal nobackup nowritebackup
 runtime! macros/matchit.vim
 
 " Vundle and bundle configuration
@@ -526,6 +530,7 @@ set suffixesadd+=.jsx
 set path+=$PWD/node_modules
 
 "let g:syntastic_auto_loc_list=1
+let g:syntastic_eslint_exec='npm run eslint'
 let g:syntastic_javascript_checkers=['eslint']
 
 

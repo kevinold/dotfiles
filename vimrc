@@ -210,6 +210,8 @@ Bundle 'mxw/vim-jsx.git'
 
 Bundle 'moll/vim-node'
 
+Bundle 'editorconfig/editorconfig-vim'
+
 " Load snippets from multiple directories
 let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"
 

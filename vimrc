@@ -22,8 +22,8 @@ set lazyredraw
 set ttyfast                               " Send more characters when redrawing the screen
 
 let g:vundle_default_git_proto = 'git'
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 "if !empty($MY_RUBY_HOME)
  "let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
@@ -106,7 +106,8 @@ Bundle 'mileszs/ack.vim'
 "Bundle 'Lokaltog/vim-powerline'
 
 " Airline
-Bundle 'bling/vim-airline'
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -211,6 +212,9 @@ Bundle 'mxw/vim-jsx.git'
 Bundle 'moll/vim-node'
 
 Bundle 'editorconfig/editorconfig-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 
 " Load snippets from multiple directories
 let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"

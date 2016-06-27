@@ -21,7 +21,7 @@ filetype off " required for Vundle
 set lazyredraw
 set ttyfast                               " Send more characters when redrawing the screen
 
-let g:vundle_default_git_proto = 'git' 
+let g:vundle_default_git_proto = 'git'
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
@@ -30,7 +30,7 @@ call vundle#rc()
 "endif
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Bundle 'VundleVim/Vundle.vim'
 
 Bundle 'altercation/vim-colors-solarized'
 
@@ -381,11 +381,11 @@ function! TagSelection()
   let &indentexpr = saveIndent
 
   call cursor(curl, curc)
-endfunction 
+endfunction
 
-" Settings or text files. 
-" turn on spelling when entering a text file: 
-"autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us | set tw=78 
+" Settings or text files.
+" turn on spelling when entering a text file:
+"autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us | set tw=78
 autocmd BufRead,BufNewFile *.textile setlocal spell spelllang=en_us
 autocmd BufRead,BufNewFile *.txt setlocal spell spelllang=en_us
 
@@ -540,7 +540,7 @@ let g:syntastic_javascript_checkers=['eslint']
 nmap <leader>l :bnext<CR>
 
 " Move to the previous buffer
-nmap <leader>h :bprevious<CR>
+nmap <leader>g :bprevious<CR>
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab

@@ -16,7 +16,6 @@ alias v='vim'
 alias vi='echo "use v!!!"'
 
 alias ll='ls -hlahtr'
-alias ls='ls --color=auto'
 
 alias git lg='nocorrect git lg'
 alias ge="git status --porcelain | sed 's/^...//' | xargs -o vim"
@@ -25,13 +24,19 @@ alias ge="git status --porcelain | sed 's/^...//' | xargs -o vim"
 alias gp='git push --dry-run'
 alias gp!='git push'
 
+alias nrl='npm run eslint:all'
+alias nt='npm test'
+alias ns='npm start'
+alias ntw='npm run test:watch'
+alias ntwf='npm run test:watch:firefox'
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git github jira osx mix frontend-search brew zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
-source ~/bin/z.sh
+. `brew --prefix`/etc/profile.d/z.sh
 function precmd () {
   _z --add "$(pwd -P)"
 }
@@ -43,9 +48,19 @@ __git_files () {
 }
 
 #oh-my-zsh git plugin overrides
+alias ls='ls --color=auto'
 
 # If you installed the SDK via Homebrew for React Native
 export ANDROID_HOME=/usr/local/opt/android-sdk
+#export ANDROID_HOME=/usr/local/Cellar/android-sdk
+
+export FIREFOX_BIN=/Applications/Firefox.app/Contents/MacOS/firefox-bin
+
+export SAUCE_PARENT_TUNNEL=‘automation_team’
+export SAUCE_TUNNEL_IDENTIFIER=‘automation-team-default’
+
+export SAUCE_USERNAME=mywsb_app
+export SAUCE_ACCESS_KEY=7569546f-93c5-44d8-aef0-6e6b4bdc55c4
 
 # Customize to your needs...
 export PATH=:~/bin:/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:~/bin
@@ -54,5 +69,5 @@ export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
 export EDITOR='vim'
 
-export NVM_DIR="/Users/kevinold/.nvm"
+export NVM_DIR="/Users/kold/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -1,4 +1,4 @@
-brew install nvm
+#brew install nvm
 
 nvm install 6.3.0
 nvm use 6.3.0

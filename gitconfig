@@ -107,4 +107,6 @@
 #[gc]
   #rerereresolved = never
 [push]
-	default = simple
+	default = current
+[hub]
+	host = github.lifeway.org

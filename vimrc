@@ -17,6 +17,7 @@ set nocompatible " be iMproved
 filetype off " required for Vundle
 
 "set shell=bash
+set shell=/bin/zsh
 
 set lazyredraw
 set ttyfast                               " Send more characters when redrawing the screen
@@ -63,6 +64,8 @@ Bundle "AndrewRadev/splitjoin.vim"
 
 " Syntax checking hacks for vim
 Bundle "scrooloose/syntastic"
+
+Bundle 'mtscout6/syntastic-local-eslint.vim'
 
 " Color coding of pairs of parenthesis, braces and brackets
 Bundle "kien/rainbow_parentheses.vim"
@@ -113,6 +116,7 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_powerline_fonts = 1
+let g:Powerline_symbols='unicode'
 "let g:airline_symbols.space = "\ua0"
 "set guifont=Source\ Code\ Pro\ for\ Powerline "make sure to escape the spaces in the name properly"
 " disable arrows per https://github.com/bling/vim-airline/issues/17#issuecomment-22650957
@@ -536,7 +540,15 @@ set suffixesadd+=.jsx
 set path+=$PWD/node_modules
 
 "let g:syntastic_auto_loc_list=1
-let g:syntastic_eslint_exec='npm run eslint'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_eslint_exe='npm run eslint --'
 let g:syntastic_javascript_checkers=['eslint']
 
 

@@ -95,9 +95,10 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'krisleech/snipmate-snippets'
 
 " vim-react-snippets:
-Bundle "kevinold/vim-react-snippets"
+"Bundle "kevinold/vim-react-snippets"
 
-Bundle 'honza/vim-snippets'
+"Bundle 'honza/vim-snippets'
+Bundle 'kevinold/vim-snippets'
 
 " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
 Bundle 'Raimondi/delimitMate'
@@ -216,6 +217,8 @@ Bundle 'mxw/vim-jsx.git'
 Bundle 'moll/vim-node'
 
 Bundle 'editorconfig/editorconfig-vim'
+
+Bundle 'sbdchd/neoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -546,7 +549,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 "let g:syntastic_javascript_eslint_exe='npm run eslint --'
 let g:syntastic_javascript_checkers=['eslint']
@@ -565,3 +568,18 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+" ES6 import destructuring to multiple lines
+map <leader>db 0f{lxi<CR><ESC>
+map <leader>dv f,wi<CR><ESC>,dv
+"map <leader>de 0f}hxi<CR><ESC>
+
+map <leader>dl ,db,dv
+"map <leader>dl ,db,dv,de
+
+" Prettier integration via Neoformat
+"autocmd FileType javascript set formatprg=prettier\ --stdin
+"let g:neoformat_enabled_javascript = ['prettier']
+autocmd BufWritePre *.js Neoformat
+autocmd FileType javascript setlocal formatprg=prettier\ --stdin
+" Use formatprg when available
+let g:neoformat_try_formatprg = 1

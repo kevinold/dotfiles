@@ -220,6 +220,8 @@ Bundle 'editorconfig/editorconfig-vim'
 
 Bundle 'sbdchd/neoformat'
 
+Bundle 'derekwyatt/vim-scala'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -576,10 +578,3 @@ map <leader>dv f,wi<CR><ESC>,dv
 map <leader>dl ,db,dv
 "map <leader>dl ,db,dv,de
 
-" Prettier integration via Neoformat
-"autocmd FileType javascript set formatprg=prettier\ --stdin
-"let g:neoformat_enabled_javascript = ['prettier']
-autocmd BufWritePre *.js Neoformat
-autocmd FileType javascript setlocal formatprg=prettier\ --stdin
-" Use formatprg when available
-let g:neoformat_try_formatprg = 1

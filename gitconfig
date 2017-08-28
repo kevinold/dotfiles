@@ -2,6 +2,7 @@
   pager = less -E -F -X
   excludesfile = ~/.gitignore
   editor = "/usr/local/bin/vim"
+	attributesfile = /Users/kold/.gitattributes
 [color]
 	status = auto
 	diff = auto
@@ -108,5 +109,3 @@
   #rerereresolved = never
 [push]
 	default = current
-[hub]
-	host = github.lifeway.org

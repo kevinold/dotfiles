@@ -587,3 +587,12 @@ let g:prettier#autoformat = 0
 
 " double quotes over single quotes
 let g:prettier#config#single_quote = 'false' 
+
+" print spaces between brackets
+let g:prettier#config#bracket_spacing = 'true'
+
+" none|es5|all
+let g:prettier#config#trailing_comma = 'none'
+
+autocmd BufWritePre *.js Prettier
+

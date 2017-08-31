@@ -582,6 +582,7 @@ map <leader>dl ,db,dv
 
 
 " Prettier config
+" Note: vim-prettier default settings differ from prettier intentionally.
 " Disable auto formatting of files that have "@format" tag
 let g:prettier#autoformat = 0
 

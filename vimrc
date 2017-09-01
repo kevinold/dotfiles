@@ -222,8 +222,6 @@ Bundle 'sbdchd/neoformat'
 
 Bundle 'derekwyatt/vim-scala'
 
-Bundle 'prettier/vim-prettier'
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -581,19 +579,4 @@ map <leader>dl ,db,dv
 "map <leader>dl ,db,dv,de
 
 
-" Prettier config
-" Note: vim-prettier default settings differ from prettier intentionally.
-" Disable auto formatting of files that have "@format" tag
-let g:prettier#autoformat = 0
-
-" double quotes over single quotes
-let g:prettier#config#single_quote = 'false' 
-
-" print spaces between brackets
-let g:prettier#config#bracket_spacing = 'true'
-
-" none|es5|all
-let g:prettier#config#trailing_comma = 'none'
-
-autocmd BufWritePre *.js Prettier
-
+let g:neoformat_only_msg_on_error = 1

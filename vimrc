@@ -6,6 +6,7 @@ set encoding=utf-8
 set t_Co=256
 set number
 
+set belloff=all
 set backupdir^=~/.vimbackup/
 set directory^=~/.vimbackup/
 
@@ -221,6 +222,8 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'sbdchd/neoformat'
 
 Bundle 'derekwyatt/vim-scala'
+
+Bundle 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -579,4 +582,6 @@ map <leader>dl ,db,dv
 "map <leader>dl ,db,dv,de
 
 
-let g:neoformat_only_msg_on_error = 1
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1

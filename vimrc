@@ -73,7 +73,7 @@ Bundle "kien/rainbow_parentheses.vim"
 
 " Git Gutter
 Bundle 'airblade/vim-gitgutter'
-let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 
 " Git wrapper for vim
 Bundle 'tpope/vim-fugitive'
@@ -100,6 +100,7 @@ Bundle 'krisleech/snipmate-snippets'
 
 "Bundle 'honza/vim-snippets'
 Bundle 'kevinold/vim-snippets'
+Bundle 'epilande/vim-react-snippets'
 
 " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
 Bundle 'Raimondi/delimitMate'
@@ -127,6 +128,7 @@ let g:airline_right_sep=''
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -224,6 +226,10 @@ Bundle 'sbdchd/neoformat'
 Bundle 'derekwyatt/vim-scala'
 
 Bundle 'w0rp/ale'
+
+Bundle 'flowtype/vim-flow'
+
+Bundle 'bhurlow/vim-parinfer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -449,6 +455,8 @@ inoremap <C-u> <esc> gUiwea
 map <Leader>y <C-y>
 
 "emmet - Ctrl+e to expand css selectors
+" per https://github.com/mattn/emmet-vim/issues/255#issuecomment-215796031
+let g:user_emmet_settings={'javascript.jsx': {'extends':'jsx'}}
 let g:user_emmet_expandabbr_key = '<c-e>'
 let g:user_emmet_complete_tag = 1
 
@@ -558,6 +566,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 "let g:syntastic_javascript_eslint_exe='npm run eslint --'
 let g:syntastic_javascript_checkers=['eslint']
+let g:loaded_syntastic_scss_scss_lint_checker = 0
 
 
 " Move to the next buffer
@@ -584,4 +593,25 @@ map <leader>dl ,db,dv
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_linters = {}
+let g:ale_linters['yaml'] = ['cfn-lint']
+let g:ale_javascript_prettier_options = '--trailing-comma all'
 let g:ale_fix_on_save = 1
+
+" Asynchronous Lint Engine (ALE)
+" Limit linters used for JavaScript.
+"let g:ale_linters = {}
+"let g:ale_linters['javascript'] = ['flow']
+"highlight clear ALEErrorSign " otherwise uses error bg color (typically red)
+"highlight clear ALEWarningSign " otherwise uses error bg color (typically red)
+"let g:ale_sign_error = 'X' " could use emoji
+"let g:ale_sign_warning = '?' " could use emoji
+"let g:ale_statusline_format = ['X %d', '? %d', '']
+"" %linter% is the name of the linter that provided the message
+"" %s is the error or warning message
+"let g:ale_echo_msg_format = '%linter% says %s'
+"" Map keys to navigate between lines with errors and warnings.
+"nnoremap <leader>an :ALENextWrap<cr>
+"nnoremap <leader>ap :ALEPreviousWrap<cr>
+
+

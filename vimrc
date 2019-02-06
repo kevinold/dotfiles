@@ -88,12 +88,13 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
 " Snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle 'garbas/vim-snipmate'
-
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle 'garbas/vim-snipmate'
 " Snippets for Snipmate
-Bundle 'krisleech/snipmate-snippets'
+"Bundle 'krisleech/snipmate-snippets'
+
+Bundle "SirVer/ultisnips"
 
 " vim-react-snippets:
 "Bundle "kevinold/vim-react-snippets"
@@ -235,7 +236,7 @@ Bundle 'bhurlow/vim-parinfer'
 call vundle#end()            " required
 
 " Load snippets from multiple directories
-let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"
+"let g:snippets_dir = "~/.vim/bundle/snipmate/snippets/,~/.vim/snippets/"
 
 " from http://weblog.jamisbuck.org/2008/11/17/vim-follow-up
 let mapleader = ","
@@ -481,10 +482,19 @@ autocmd BufEnter * :syntax sync fromstart
 "noremap <Leader>ss <Esc>:syntax sync fromstart<CR>
 "inoremap <Leader>ss <C-o>:syntax sync fromstart<CR>
 
-let g:SuperTabNoCompleteBefore = ['&snipMateNextOrTrigger']
-let g:snipMate = {}
-let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['html'] = 'html, javascript, javascript-jquery'
+"let g:SuperTabNoCompleteBefore = ['&snipMateNextOrTrigger']
+"let g:snipMate = {}
+"let g:snipMate.scope_aliases = {}
+"let g:snipMate.scope_aliases['html'] = 'html, javascript, javascript-jquery'
+
+
+""""""""""
+" UltiSnip config
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 
 """"""""""
 " CtrlP config

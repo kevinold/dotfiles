@@ -20,8 +20,11 @@ apps=(
     mailplane
     moom
     slack
-    things
     virtualbox
+    mas
+    docker
+    visual-studio-code
+    evernote
 )
 
 brew cask install "${apps[@]}"

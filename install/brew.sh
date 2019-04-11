@@ -35,6 +35,11 @@ apps=(
     tree
     vim
     wget
+    awscli
+    aws-sam-cli
+    dos2unix
+    ssh-copy-id
+    tree
 )
 
 brew install "${apps[@]}"

@@ -10,6 +10,10 @@ set belloff=all
 set backupdir^=~/.vimbackup/
 set directory^=~/.vimbackup/
 
+" add yaml stuffs
+"au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml " foldmethod=indent
+"autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 autocmd filetype crontab setlocal nobackup nowritebackup
 runtime! macros/matchit.vim
 
@@ -99,8 +103,9 @@ Bundle "SirVer/ultisnips"
 " vim-react-snippets:
 "Bundle "kevinold/vim-react-snippets"
 
-"Bundle 'honza/vim-snippets'
-Bundle 'kevinold/vim-snippets'
+Bundle 'honza/vim-snippets'
+"Bundle 'kevinold/vim-snippets'
+Bundle 'epilande/vim-es2015-snippets'
 Bundle 'epilande/vim-react-snippets'
 
 " Vim plugin, provides insert mode auto-completion for quotes, parens, brackets, etc.
@@ -231,6 +236,10 @@ Bundle 'w0rp/ale'
 Bundle 'flowtype/vim-flow'
 
 Bundle 'bhurlow/vim-parinfer'
+
+Bundle 'mrk21/yaml-vim'
+
+Bundle "leafgarland/typescript-vim"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -603,8 +612,9 @@ map <leader>dl ,db,dv
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['yaml'] = ['prettier']
 let g:ale_linters = {}
-let g:ale_linters['yaml'] = ['cfn-lint']
+let g:ale_linters['yaml'] = ['prettier']
 let g:ale_javascript_prettier_options = '--trailing-comma all'
 let g:ale_fix_on_save = 1
 

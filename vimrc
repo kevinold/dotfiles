@@ -241,6 +241,8 @@ Bundle 'mrk21/yaml-vim'
 
 Bundle "leafgarland/typescript-vim"
 
+Bundle "Quramy/tsuquyomi"
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -615,6 +617,7 @@ let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['yaml'] = ['prettier']
 let g:ale_linters = {}
 let g:ale_linters['yaml'] = ['prettier']
+let g:ale_linters['typescript'] = ['tsserver']
 let g:ale_javascript_prettier_options = '--trailing-comma all'
 let g:ale_fix_on_save = 1
 

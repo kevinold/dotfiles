@@ -68,9 +68,9 @@ Bundle "tpope/vim-abolish"
 Bundle "AndrewRadev/splitjoin.vim"
 
 " Syntax checking hacks for vim
-Bundle "scrooloose/syntastic"
+"Bundle "scrooloose/syntastic"
 
-Bundle 'mtscout6/syntastic-local-eslint.vim'
+"Bundle 'mtscout6/syntastic-local-eslint.vim'
 
 " Color coding of pairs of parenthesis, braces and brackets
 Bundle "kien/rainbow_parentheses.vim"
@@ -576,16 +576,16 @@ set path+=$PWD/node_modules
 
 "let g:syntastic_auto_loc_list=1
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
 "let g:syntastic_javascript_eslint_exe='npm run eslint --'
-let g:syntastic_javascript_checkers=['eslint']
-let g:loaded_syntastic_scss_scss_lint_checker = 0
+"let g:syntastic_javascript_checkers=['eslint']
+"let g:loaded_syntastic_scss_scss_lint_checker = 0
 
 
 " Move to the next buffer

@@ -243,6 +243,8 @@ Bundle "leafgarland/typescript-vim"
 
 Bundle "Quramy/tsuquyomi"
 
+Bundle "jparise/vim-graphql"
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 

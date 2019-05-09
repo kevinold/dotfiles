@@ -25,6 +25,7 @@ apps=(
     docker
     visual-studio-code
     evernote
+    notion
 )
 
 brew cask install "${apps[@]}"

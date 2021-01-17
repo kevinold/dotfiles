@@ -1,8 +1,9 @@
 # Install Caskroom
 
-brew tap caskroom/cask
-brew install brew-cask
-brew tap caskroom/versions
+#brew tap caskroom/cask
+#brew install brew-cask
+#brew tap caskroom/versions
+brew tap homebrew/cask-versions
 
 # Install packages
 
@@ -12,23 +13,22 @@ apps=(
     box-sync
     dropbox
     firefox
-    google-chrome
-    google-drive
-    google-hangouts
-    iterm2
+#    google-chrome
+    #google-drive
+#    iterm2
     keepingyouawake
-    mailplane
+#    mailplane
     moom
     slack
-    virtualbox
-    mas
-    docker
-    visual-studio-code
+    #virtualbox
+    #mas
+#    docker
+#    visual-studio-code
     evernote
     notion
 )
 
-brew cask install "${apps[@]}"
+brew install --cask "${apps[@]}"
 
 # Quick Look Plugins (https://github.com/sindresorhus/quick-look-plugins)
 #brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webpquicklook suspicious-package && qlmanage -r

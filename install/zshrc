@@ -49,7 +49,8 @@ alias ytwj='yarn test -- --watch'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github jira osx mix frontend-search brew zsh-syntax-highlighting react-native yarn)
+#plugins=(git github jira osx mix frontend-search brew zsh-syntax-highlighting react-native yarn)
+plugins=(git github jira osx mix frontend-search brew react-native yarn)
 
 source $ZSH/oh-my-zsh.sh
 . `brew --prefix`/etc/profile.d/z.sh
@@ -64,7 +65,7 @@ __git_files () {
 }
 
 #oh-my-zsh git plugin overrides
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 
 # If you installed the SDK via Homebrew for React Native
 export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -82,7 +83,7 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Hom
 
 export PATH=$JAVA_HOME/bin:$PATH
 
-export NVM_DIR="/Users/kold/.nvm"
+export NVM_DIR="/Users/kevin/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PATH="$HOME/.yarn/bin:$PATH"
@@ -129,3 +130,10 @@ export PATH="$HOME/.fastlane/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

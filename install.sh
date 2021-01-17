@@ -64,7 +64,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 #"Key repeat speed"
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
 
 #"Enabling the Develop menu and the Web Inspector in Safari"
 defaults write com.apple.Safari IncludeDevelopMenu -bool true

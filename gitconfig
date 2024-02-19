@@ -1,7 +1,7 @@
 [core]
   pager = less -E -F -X
   excludesfile = ~/.gitignore
-  editor = "/usr/local/bin/vim"
+  editor = "/opt/homebrew/bin/vim"
 	attributesfile = /Users/kold/.gitattributes
 [color]
 	status = auto
@@ -109,3 +109,7 @@
   #rerereresolved = never
 [push]
 	default = current
+[init]
+	defaultBranch = main
+[hub]
+	protocol = ssh

@@ -1,10 +1,12 @@
 # Install Homebrew
 
-#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-#brew tap homebrew/versions
-#brew tap homebrew/dupes
-#brew update
-#brew upgrade
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# brew tap homebrew/versions
+# brew tap homebrew/dupes
+brew tap aws/tap
+brew update
+brew upgrade
+
 
 # Install packages
 
@@ -28,6 +30,7 @@ apps=(
     imagemagick
     jq
     mackup
+    mas
     peco
     psgrep
     python
@@ -38,11 +41,11 @@ apps=(
     vim
     wget
     awscli
-    #aws-sam-cli
+    aws-sam-cli
     dos2unix
-    ssh-copy-id
     tree
     git-extras
+    nvm
 )
 
 brew install "${apps[@]}"

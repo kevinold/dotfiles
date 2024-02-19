@@ -24,17 +24,17 @@ ln -sfv "$DOTFILES_DIR/gitconfig" ~
 
 . "$DOTFILES_DIR/install/brew.sh"
 . "$DOTFILES_DIR/install/zsh.sh"
-#. "$DOTFILES_DIR/install/node.sh"
+. "$DOTFILES_DIR/install/node.sh"
 
 if [ "$(uname)" == "Darwin" ]; then
-    . "$DOTFILES_DIR/install/brew-cask.sh"
+   . "$DOTFILES_DIR/install/brew-cask.sh"
 fi
 
 # Install extra stuff
 
-if [ -d "$EXTRA_DIR" -a -f "$EXTRA_DIR/install.sh" ]; then
-    . "$EXTRA_DIR/install.sh"
-fi
+#if [ -d "$EXTRA_DIR" -a -f "$EXTRA_DIR/install.sh" ]; then
+#    . "$EXTRA_DIR/install.sh"
+#fi
 
 echo "Setting some Mac settings..."
 
@@ -64,7 +64,7 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 #"Key repeat speed"
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 3 # normal minimum is 2 (30 ms)
+defaults write -g KeyRepeat -int 2 # normal minimum is 2 (30 ms)
 
 #"Enabling the Develop menu and the Web Inspector in Safari"
 defaults write com.apple.Safari IncludeDevelopMenu -bool true

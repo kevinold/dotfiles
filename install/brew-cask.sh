@@ -8,24 +8,16 @@ brew tap homebrew/cask-versions
 # Install packages
 
 apps=(
-    alfred
-    arq
-    box-sync
-    dropbox
     firefox
-#    google-chrome
-    #google-drive
-#    iterm2
+    google-chrome
+    iterm2
     keepingyouawake
-#    mailplane
     moom
     slack
-    #virtualbox
-    #mas
 #    docker
-#    visual-studio-code
-    evernote
+    visual-studio-code
     notion
+    obsidian
 )
 
 brew install --cask "${apps[@]}"

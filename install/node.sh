@@ -1,8 +1,7 @@
 #brew install nvm
 
-nvm install 6.3.0
-nvm use 6.3.0
-nvm alias default 6.3.0
+nvm install --lts
+nvm use --lts
 
 # Globally install with npm
 
@@ -18,6 +17,7 @@ packages=(
     tldr
     underscore
     vtop
+    npm-check-updates
 )
 
 npm install -g "${packages[@]}"

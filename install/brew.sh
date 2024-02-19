@@ -20,6 +20,7 @@ apps=(
     ffmpeg
     fasd
     gifsicle
+    gh
     git
     gnu-sed
     grep

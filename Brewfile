@@ -27,7 +27,7 @@ brew "starship"               # Prompt
 brew "tmux"
 brew "tree"
 brew "wget"
-brew "zoxide"                 # Better cd
+brew "zoxide"                 # Better cd (aliased to z)
 brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"

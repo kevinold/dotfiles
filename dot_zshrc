@@ -73,9 +73,9 @@ if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-# Zoxide (better cd)
+# Zoxide (better cd) - use "z" command for familiarity
 if command -v zoxide &>/dev/null; then
-  eval "$(zoxide init zsh)"
+  eval "$(zoxide init zsh --cmd z)"
 fi
 
 # Starship prompt

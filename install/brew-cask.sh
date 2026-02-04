@@ -8,16 +8,22 @@ brew tap homebrew/cask-versions
 # Install packages
 
 apps=(
-    firefox
-    google-chrome
-    iterm2
-    keepingyouawake
-    moom
-    slack
-#    docker
-    visual-studio-code
-    notion
-    obsidian
+  firefox
+  google-chrome
+  iterm2
+  keepingyouawake
+  #moom
+  slack
+  #    docker
+  visual-studio-code
+  #notion
+  obsidian
+  wezterm
+  flameshot
+  alfred
+  rectangle
+  microsoft-teams
+  orbstack
 )
 
 brew install --cask "${apps[@]}"

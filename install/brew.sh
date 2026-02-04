@@ -1,52 +1,53 @@
 # Install Homebrew
 
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 # brew tap homebrew/versions
 # brew tap homebrew/dupes
 brew tap aws/tap
 brew update
 brew upgrade
 
-
 # Install packages
 
 apps=(
-    ack
-    ag
-    bats
-    #cmake
-    coreutils
-    dockutil
-    ffmpeg
-    fasd
-    gifsicle
-    gh
-    git
-    gnu-sed
-    grep
-    #gnu-sed --with-default-names
-    #grep --with-default-names
-    hub
-    httpie
-    imagemagick
-    jq
-    mackup
-    mas
-    peco
-    psgrep
-    python
-    shellcheck
-    ssh-copy-id
-    tmux
-    tree
-    vim
-    wget
-    awscli
-    aws-sam-cli
-    dos2unix
-    tree
-    git-extras
-    nvm
+  ack
+  ag
+  bats
+  #cmake
+  coreutils
+  dockutil
+  ffmpeg
+  fastd
+  gifsicle
+  gh
+  git
+  gnu-sed
+  grep
+  rg
+  #gnu-sed --with-default-names
+  #grep --with-default-names
+  hub
+  httpie
+  imagemagick
+  jq
+  mackup
+  mas
+  peco
+  psgrep
+  python
+  shellcheck
+  ssh-copy-id
+  tmux
+  tree
+  vim
+  wget
+  awscli
+  aws-sam-cli
+  dos2unix
+  tree
+  git-extras
+  nvm
 )
 
 brew install "${apps[@]}"

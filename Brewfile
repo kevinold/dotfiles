@@ -2,7 +2,6 @@
 # Install with: brew bundle --file=Brewfile
 
 # Taps
-tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 
 # ================================
@@ -38,7 +37,7 @@ brew "direnv"
 # Development
 # ================================
 brew "nvm"                    # Node version manager
-brew "bun"                    # JS runtime/bundler
+# Note: bun is installed via curl in run_once_03-install-tools.sh
 
 # ================================
 # AWS

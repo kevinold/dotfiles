@@ -35,15 +35,25 @@
   rl = reflog
   undo = reset --soft HEAD^
 
+  # Push shortcuts
+  mp = push origin master
+  mpd = push --dry-run origin master
+  rid = rebase master --ignore-date
+
   # Diff shortcuts
   d1 = diff HEAD^
   d2 = diff HEAD^^
   d3 = diff HEAD^^^
+  d4 = diff HEAD^^^^
+  d5 = diff HEAD^^^^^
+  d10 = diff HEAD^^^^^^^^^^
 
   # Log with graph
   lg = log -n 15 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %Creset' --abbrev-commit --date=relative
   lgnm = log -n 15 --graph --no-merges --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %Creset' --abbrev-commit --date=relative
   lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %Creset' --abbrev-commit --date=relative
+  lganm = log --no-merges --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %Creset' --abbrev-commit --date=relative
+  lgau = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %Creset' --abbrev-commit --date=relative --author-date-order
   lgp = log --pretty=format:'%aD %s'
   lf = log --name-only
 
@@ -60,6 +70,16 @@
   assume = update-index --assume-unchanged
   unassume = update-index --no-assume-unchanged
   assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+  unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+  assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+
+  # Branch management
+  bak = !git branch `git br | grep '*' | sed -e 's/* /BAK_/'`
+  done = "!f() { git branch | grep \"$1\" | cut -c 3- | grep -v done | xargs -I{} git branch -m {} done-{}; }; f"
+  publish = !sh -c 'git push origin \"$0\" && git config \"branch.$0.remote\" origin && git config \"branch.$0.merge\" \"refs/heads/$0\"'
+
+  # Grep from root
+  gra = "!f() { A=$(pwd) && TOPLEVEL=$(git rev-parse --show-toplevel) && cd $TOPLEVEL && git grep --full-name -In $1 | xargs -I{} echo $TOPLEVEL/{} && cd $A; }; f"
 
   # Merge helpers
   ours = "!f() { git co --ours $@ && git add $@; }; f"

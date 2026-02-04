@@ -1,0 +1,131 @@
+# ================================
+# ZSH Configuration
+# ================================
+
+# Oh-My-Zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME=""  # Using starship instead
+
+# Plugins (minimal set for speed)
+plugins=(
+  git
+  gh
+  fzf
+  zoxide
+)
+
+# Load Oh-My-Zsh (install if missing)
+if [[ -d "$ZSH" ]]; then
+  source "$ZSH/oh-my-zsh.sh"
+fi
+
+# ================================
+# Completions
+# ================================
+if type brew &>/dev/null; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+autoload -Uz compinit && compinit
+
+# ================================
+# Tool Initialization
+# ================================
+
+# NVM (with auto-load for .nvmrc)
+_load_nvm() {
+  if [[ -z "$_NVM_LOADED" ]]; then
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+    export _NVM_LOADED=1
+  fi
+}
+
+# Auto-load .nvmrc
+autoload -U add-zsh-hook
+load-nvmrc() {
+  _load_nvm
+  local nvmrc_path="$(nvm_find_nvmrc 2>/dev/null)"
+  if [[ -n "$nvmrc_path" ]]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")" 2>/dev/null)
+    if [[ "$nvmrc_node_version" = "N/A" ]]; then
+      nvm install
+    elif [[ "$nvmrc_node_version" != "$(nvm version)" ]]; then
+      nvm use
+    fi
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+[[ -f .nvmrc ]] && load-nvmrc
+
+# Bun completions
+[[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
+
+# Direnv
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
+# Zoxide (better cd)
+if command -v zoxide &>/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
+# Starship prompt
+if command -v starship &>/dev/null; then
+  eval "$(starship init zsh)"
+fi
+
+# dotenvx (conditional load)
+if command -v dotenvx &>/dev/null; then
+  alias dotenv='dotenvx run --'
+fi
+
+# OrbStack (if installed)
+[[ -f ~/.orbstack/shell/init.zsh ]] && source ~/.orbstack/shell/init.zsh 2>/dev/null
+
+# ================================
+# Aliases
+# ================================
+
+# Editor
+alias v='nvim'
+alias vi='echo "use v instead!"'
+
+# Claude Code
+alias cld='claude'
+alias clds='claude --model sonnet'
+alias cldo='claude --model opus'
+
+# Python (via uv)
+alias py='uv run python'
+alias uvvenv='uv venv --python 3.12 && source .venv/bin/activate'
+
+# Listing
+alias ll='ls -hlahtr'
+alias cls='clear; ls'
+
+# Git (supplement oh-my-zsh git plugin)
+alias gp='git push --dry-run'
+alias gp!='git push'
+
+# NPM/Yarn/Bun
+alias nt='npm test'
+alias ns='npm start'
+alias yt='yarn test'
+alias ys='yarn start'
+alias bt='bun test'
+alias bs='bun start'
+
+# ================================
+# Functions
+# ================================
+
+# Edit files with git changes
+ge() {
+  git status --porcelain | sed 's/^...//' | xargs -o nvim
+}
+
+# ================================
+# Local overrides
+# ================================
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"

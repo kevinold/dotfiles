@@ -1,0 +1,42 @@
+#!/bin/bash
+# linear-worktree - Create git worktree from Linear issue
+# Requires: LINEAR_API_KEY env var
+
+set -e
+
+ISSUE_ID="${1:?Usage: linear-worktree <ISSUE_ID> [base_branch]}"
+BASE_BRANCH="${2:-staging}"
+REPO_NAME=$(basename "$(git rev-parse --show-toplevel)")
+WORKTREE_BASE=$(dirname "$(git rev-parse --show-toplevel)")
+
+if [ -z "$LINEAR_API_KEY" ]; then
+  echo "❌ LINEAR_API_KEY not set"
+  echo "Get your API key from: Linear Settings > API > Personal API keys"
+  exit 1
+fi
+
+# Fetch branch name from Linear API
+BRANCH_NAME=$(curl -s -X POST https://api.linear.app/graphql \
+  -H "Authorization: $LINEAR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d "{\"query\": \"{ issue(id: \\\"$ISSUE_ID\\\") { branchName } }\"}" |
+  jq -r '.data.issue.branchName')
+
+if [ "$BRANCH_NAME" = "null" ] || [ -z "$BRANCH_NAME" ]; then
+  echo "❌ Could not fetch branch name for $ISSUE_ID"
+  exit 1
+fi
+
+WORKTREE_DIR="${WORKTREE_BASE}/${REPO_NAME}-wt-${ISSUE_ID}"
+
+echo "Creating worktree:"
+echo "  Issue: $ISSUE_ID"
+echo "  Branch: $BRANCH_NAME"
+echo "  Directory: $WORKTREE_DIR"
+
+git fetch origin "$BASE_BRANCH"
+git worktree add "$WORKTREE_DIR" -b "$BRANCH_NAME" "origin/$BASE_BRANCH"
+
+echo ""
+cd $WORKTREE_DIR
+echo "✅ Done! Run: claude"

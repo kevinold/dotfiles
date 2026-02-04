@@ -1,0 +1,30 @@
+# Old dotfiles structure (to be deleted)
+ackrc
+bash/
+bash_profile
+com.googlecode.iterm2.plist
+gemrc
+irbrc
+pryrc
+Rakefile
+snippets/
+spacemacs
+vim/
+vimrc
+install/
+install.sh
+
+# Documentation (don't manage these as dotfiles)
+docs/
+LICENSE
+README
+README.md
+.gitignore
+
+# Brewfile is referenced by scripts, not managed as a dotfile
+Brewfile
+
+# Claude Code state (don't overwrite)
+.claude/projects/
+.claude/todos/
+.claude/statsig/

@@ -1,0 +1,51 @@
+# ================================
+# Environment Variables
+# ================================
+# This file is sourced on ALL shell invocations.
+# Keep it fast and minimal - no output!
+
+# XDG Base Directory
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# Editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+export GIT_EDITOR="nvim"
+
+# History
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=50000
+export SAVEHIST=50000
+
+# PATH (typeset -U ensures unique entries)
+typeset -U path
+path=(
+  "$HOME/.local/bin"
+  "$HOME/.bun/bin"
+  "$HOME/.cargo/bin"
+  "/opt/homebrew/bin"
+  "/opt/homebrew/sbin"
+  $path
+)
+
+# Homebrew
+if [[ -f /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+
+# Rust
+export CARGO_HOME="$HOME/.cargo"
+export RUSTUP_HOME="$HOME/.rustup"
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+
+# ================================
+# Local overrides (secrets, machine-specific)
+# ================================
+[[ -f "$HOME/.zshenv.local" ]] && source "$HOME/.zshenv.local"

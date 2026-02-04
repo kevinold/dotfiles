@@ -1,0 +1,55 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "prettier": {
+    "allowed": true,
+  },
+  "disable_ai": false,
+  "agent": {
+    "single_file_review": false,
+    "inline_assistant_model": {
+      "provider": "google",
+      "model": "gemini-2.5-pro",
+    },
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-pro",
+    },
+    "model_parameters": [],
+    "always_allow_tool_actions": true,
+  },
+  "vim_mode": true,
+  "ui_font_size": 20,
+  "buffer_font_size": 20,
+  "agent_ui_font_size": 20,
+  "agent_buffer_font_size": 20,
+  "soft_wrap": "editor_width",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Ayu Dark",
+  },
+  "context_servers": {
+    "postgres-context-server": {
+      "settings": {
+        "database_url": "postgresql://kevinold@localhost:5432/giggs-dev",
+      },
+    },
+    "mcp-server-context7": {
+      "settings": {
+        "default_minimum_tokens": "10000",
+      },
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "env": {},
+    },
+  },
+}

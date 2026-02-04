@@ -1,0 +1,100 @@
+[core]
+  pager = less -E -F -X
+  excludesfile = ~/.config/git/ignore
+  editor = nvim
+
+[color]
+  status = auto
+  diff = auto
+  interactive = auto
+
+[alias]
+  bisect-fixed = bisect bad
+  bisect-unfixed = bisect good
+  ci = commit
+  cia = commit --amend
+  co = checkout
+  st = status
+  br = branch
+  sb = show-branch
+  sp = show -p
+  l = log
+  lp = log -p
+  di = diff
+  sl = stash list
+  sa = stash apply
+  ss = stash save
+  pu = push
+  pudr = push --dry-run
+  unstage = reset HEAD
+  staged = diff --cached
+  cp = cherry-pick
+  rb = rebase
+  rbc = rebase --continue
+  rbs = rebase --skip
+  rl = reflog
+  undo = reset --soft HEAD^
+
+  # Diff shortcuts
+  d1 = diff HEAD^
+  d2 = diff HEAD^^
+  d3 = diff HEAD^^^
+
+  # Log with graph
+  lg = log -n 15 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %Creset' --abbrev-commit --date=relative
+  lgnm = log -n 15 --graph --no-merges --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %Creset' --abbrev-commit --date=relative
+  lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an> %Creset' --abbrev-commit --date=relative
+  lgp = log --pretty=format:'%aD %s'
+  lf = log --name-only
+
+  # Recent branches
+  br7 = for-each-ref --count=7 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+  br20 = for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+
+  # Grep
+  grep = grep -Ii
+  gr = grep -Ii
+  f = "!git ls-files | grep -i"
+
+  # Assume unchanged
+  assume = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+
+  # Merge helpers
+  ours = "!f() { git co --ours $@ && git add $@; }; f"
+  theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+
+  # Reset shortcuts
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+
+  # Prune local merged branches
+  prunelocal = !sh -c 'git branch -d `git branch --merged | grep -v \"^*\\|master\\|main\"`'
+  todo = grep --heading --break -e 'FIX:*' -e 'TODO:*'
+
+[merge]
+  tool = vimdiff
+
+[user]
+  name = Kevin Old
+  email = kevin@kevinold.com
+
+[github]
+  user = kevinold
+
+[rerere]
+  enabled = 1
+
+[push]
+  default = current
+
+[init]
+  defaultBranch = main
+
+[hub]
+  protocol = ssh

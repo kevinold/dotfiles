@@ -1,0 +1,39 @@
+# Minimal, fast prompt
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$python\
+$rust\
+$character"""
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+
+[nodejs]
+symbol = " "
+format = "[$symbol($version )]($style)"
+detect_files = ["package.json", ".nvmrc"]
+
+[python]
+symbol = " "
+format = "[$symbol($version )]($style)"
+detect_files = ["pyproject.toml", "requirements.txt", ".python-version"]
+
+[rust]
+symbol = " "
+format = "[$symbol($version )]($style)"
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"

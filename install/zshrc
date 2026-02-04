@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-export EDITOR='vim'
+#export EDITOR='vim'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -13,9 +13,19 @@ ZSH_THEME="robbyrussell"
 alias npm-exec='PATH=$(npm bin):$PATH'
 #alias lessc='npm-exec lessc'
 
+alias python='/opt/homebrew/bin/python3.12'
+
+alias clds='claude --model sonnet'
+alias cldo='claude --model opus'
+alias cld='clds'
+alias rc='uv run crewai run'
+alias py='uv run pytest'
+alias uvvenv='uv venv --python 3.12 && source .venv/bin/activate'
+alias uvify='uv venv --python 3.12 && source .venv/bin/activate && uv init --bare && uv add -r requirements.txt'
+
 alias AR='/usr/bin/ar'
 alias cls='clear; ls'
-alias v='vim'
+alias v='nvim'
 alias m='more'
 #overrides so I learn shorter aliases above
 alias vi='echo "use v!!!"'
@@ -50,7 +60,7 @@ alias ytwj='yarn test -- --watch'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 #plugins=(git github jira osx mix frontend-search brew zsh-syntax-highlighting react-native yarn)
-plugins=(git github jira osx mix frontend-search brew react-native yarn)
+plugins=(git github mix frontend-search brew dotenv)
 
 source $ZSH/oh-my-zsh.sh
 . `brew --prefix`/etc/profile.d/z.sh
@@ -83,8 +93,10 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Hom
 
 export PATH=$JAVA_HOME/bin:$PATH
 
-export NVM_DIR="/Users/kevin/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# nvm installed via homebrew
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
@@ -117,16 +129,6 @@ export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 export PATH="$HOME/.fastlane/bin:$PATH"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-#[[ -f /Users/kold/.nvm/versions/node/v8.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/kold/.nvm/versions/node/v8.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-#[[ -f /Users/kold/.nvm/versions/node/v8.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kold/.nvm/versions/node/v8.1.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/kold/.nvm/versions/node/v9.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/kold/.nvm/versions/node/v9.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
@@ -137,3 +139,52 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Add Visual Studio Code (code)
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# Created by `pipx` on 2024-10-26 14:57:27
+export PATH="$PATH:/$HOME/.local/bin"
+
+# pnpm
+export PNPM_HOME="/Users/kevinold/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export PATH="/opt/homebrew/bin:$PATH"
+
+#function claude() {
+#  # Path to your actual claude executable.
+#  # Use 'command -v claude' to find the path if you're not sure.
+#  /Users/kevinold/.nvm/versions/node/v22.15.1/bin/claude "$@"
+#  # Reset the terminal state to clear leftover input.
+#  reset
+#}
+
+# start starship
+eval "$(starship init zsh)"
+
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/kevinold/.bun/_bun" ] && source "/Users/kevinold/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/kevinold/.antigravity/antigravity/bin:$PATH"
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Created by `pipx` on 2024-10-26 14:57:27
+export PATH="$PATH:/Users/kevinold/.local/bin"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# Added by `rbenv init` on Mon Dec 22 07:58:31 CST 2025
+eval "$(rbenv init - --no-rehash zsh)"

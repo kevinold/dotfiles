@@ -1,9 +1,6 @@
 # Brewfile
 # Install with: brew bundle --file=Brewfile
 
-# Taps
-tap "homebrew/cask-fonts"
-
 # ================================
 # Core CLI Tools
 # ================================

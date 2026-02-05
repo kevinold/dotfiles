@@ -28,6 +28,7 @@ fi
 
 # fnm - install latest LTS Node if not already installed
 if command -v fnm &>/dev/null; then
+  eval "$(fnm env)"
   if ! fnm ls | grep -q default; then
     echo "Installing Node.js LTS via fnm..."
     fnm install --lts

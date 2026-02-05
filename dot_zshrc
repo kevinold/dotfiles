@@ -70,6 +70,11 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 [[ -f .nvmrc ]] && load-nvmrc
 
+# fnm (Fast Node Manager) - uses .nvmrc/.node-version automatically
+if command -v fnm &>/dev/null; then
+  eval "$(fnm env --use-on-cd --version-file-strategy=local)"
+fi
+
 # Bun completions
 [[ -s "$HOME/.bun/_bun" ]] && source "$HOME/.bun/_bun"
 

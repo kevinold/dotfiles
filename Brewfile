@@ -33,6 +33,7 @@ brew "direnv"
 # ================================
 # Development
 # ================================
+brew "fnm"                    # Fast Node Manager
 brew "nvm"                    # Node version manager
 # Note: bun is installed via curl in run_once_03-install-tools.sh
 

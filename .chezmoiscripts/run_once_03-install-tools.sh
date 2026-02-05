@@ -26,16 +26,14 @@ else
   echo "Rust already installed"
 fi
 
-# NVM - install latest LTS Node if not already installed
-export NVM_DIR="$HOME/.nvm"
-if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-  source "$NVM_DIR/nvm.sh"
-  if ! nvm version default &>/dev/null 2>&1; then
-    echo "Installing Node.js LTS..."
-    nvm install --lts
-    nvm alias default 'lts/*'
+# fnm - install latest LTS Node if not already installed
+if command -v fnm &>/dev/null; then
+  if ! fnm ls | grep -q default; then
+    echo "Installing Node.js LTS via fnm..."
+    fnm install --lts
+    fnm default lts-latest
   else
-    echo "Node.js already installed: $(nvm version default)"
+    echo "Node.js already installed: $(fnm current)"
   fi
 fi
 

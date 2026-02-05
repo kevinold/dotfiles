@@ -39,40 +39,10 @@ __git_files () {
 # Tool Initialization
 # ================================
 
-# NVM (with auto-load for .nvmrc)
-_load_nvm() {
-  if [[ -z "$_NVM_LOADED" ]]; then
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-    export _NVM_LOADED=1
-  fi
-}
-
-# Lazy-load NVM: typing nvm/node/npm/npx triggers full load on first use
-for cmd in nvm node npm npx; do
-  eval "${cmd}() { unfunction nvm node npm npx 2>/dev/null; _load_nvm; ${cmd} \"\$@\" }"
-done
-
-# Auto-load .nvmrc
-autoload -U add-zsh-hook
-load-nvmrc() {
-  _load_nvm
-  local nvmrc_path="$(nvm_find_nvmrc 2>/dev/null)"
-  if [[ -n "$nvmrc_path" ]]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")" 2>/dev/null)
-    if [[ "$nvmrc_node_version" = "N/A" ]]; then
-      nvm install
-    elif [[ "$nvmrc_node_version" != "$(nvm version)" ]]; then
-      nvm use
-    fi
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-[[ -f .nvmrc ]] && load-nvmrc
-
-# fnm (Fast Node Manager) - uses .nvmrc/.node-version automatically
+# fnm (Fast Node Manager) - reads .nvmrc/.node-version automatically
 if command -v fnm &>/dev/null; then
   eval "$(fnm env --use-on-cd --version-file-strategy=local)"
+  alias nvm='fnm'
 fi
 
 # Bun completions

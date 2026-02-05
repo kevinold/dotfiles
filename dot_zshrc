@@ -48,6 +48,11 @@ _load_nvm() {
   fi
 }
 
+# Lazy-load NVM: typing nvm/node/npm/npx triggers full load on first use
+for cmd in nvm node npm npx; do
+  eval "${cmd}() { unfunction nvm node npm npx 2>/dev/null; _load_nvm; ${cmd} \"\$@\" }"
+done
+
 # Auto-load .nvmrc
 autoload -U add-zsh-hook
 load-nvmrc() {

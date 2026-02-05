@@ -1,6 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
+# Oh My Zsh (skip if already installed)
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+  echo "Installing Oh My Zsh..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+  echo "Oh My Zsh already installed"
+fi
+
 # Claude Code (native install for auto-updates - skip if already installed)
 if ! command -v claude &>/dev/null; then
   echo "Installing Claude Code..."

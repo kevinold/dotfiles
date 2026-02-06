@@ -45,6 +45,7 @@ brew "awscli"
 # Casks - Applications
 # ================================
 cask "alfred"
+cask "karabiner-elements"
 cask "firefox"
 cask "flameshot"
 cask "google-chrome"
